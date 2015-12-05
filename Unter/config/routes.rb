@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  dresources :journeys do
+  resources :journeys do
     resources :passengers
     resources :drivers
   end
