@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Starting point:</strong>
+  <%= @journey.starting_point %>
+</p>
+
+<p>
+  <strong>Ending point:</strong>
+  <%= @journey.ending_point %>
+</p>
+
+<p>
+  <strong>Starting time:</strong>
+  <%= @journey.starting_time %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @journey.user_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @journey.status %>
+</p>
+
+<%= link_to 'Edit', edit_journey_path(@journey) %> |
+<%= link_to 'Back', journeys_path %>
