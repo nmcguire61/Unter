@@ -1,0 +1,1 @@
+json.extract! @feedback, :passenger_id, :comments, :price, :created_at, :updated_at

@@ -1,0 +1,18 @@
+
+<p>
+  <strong>Passenger_id:</strong>
+  <%= @feedback.passenger_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @feedback.comment %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @feedback.rating %>
+</p>
+
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Back', feedbacks_path %>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :passengers
     resources :drivers
   end
-
+  resources :feedbacks
   resources :cars
   devise_for :users
   resources :users
