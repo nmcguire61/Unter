@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :journeys
   has_many :passengers
   has_many :drivers
+  # has_many :feedbacks, :through => :passenger
 end
