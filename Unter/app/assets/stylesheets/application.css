@@ -89,8 +89,62 @@ a {
   right: 10px;
   top: 18px;
 }
+.center {
+text-align: center;
+}
+p {
+  font-size: 20px;
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+.car_icon {
+  max-width: 20%;
+  display: inline-block;
+  margin: 20px;
+  padding-left: 100px;
+}
+.search_icon {
+  max-width: 20%;
+  display: inline-block; 
+  margin: 20px;
+  padding-left: 140px;
+}
+.icon_wrapper {
+  max-width: 80%;
+  color: white;
+  margin: 0px auto;
+  padding: 40px;
+  background: rgba(10,10,10,.8);
+}
+li{
+    color: white;
+    padding: 10px;
+}
+/*.col h3 {
+    border-left: 1px solid;
+    color: #34454e;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}*/
+h3 {
+    border-bottom: 4px solid #ff3660;
+    padding: .3em 0 .3em .3em;
+    border-left: none;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex div {
+  flex: 1 400px;
+  justify-content: space-between;
+  max-width: 390px;
+  margin: auto;
+}
 
-/*END HOME PAGE*/
+  /*END HOME PAGE*/
 /*.nav {
   margin: 0 auto;
   max-width: 70%;
