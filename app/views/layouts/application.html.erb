@@ -9,7 +9,7 @@
 <body>
   <header class="header">
     <div class="wrapper">
-      <%= image_tag("white_logo.png", :alt => "logo", :class=> "logo") %>
+      <%= link_to raw(image_tag("white_logo.png", :alt => "logo", :class=> "logo")), '/' %>
     </div>
     <section class="account">
       <% if user_signed_in? %>
