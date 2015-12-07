@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   resources :journeys do
     resources :passengers
     resources :drivers
@@ -8,7 +10,8 @@ Rails.application.routes.draw do
   resources :cars
   devise_for :users
   resources :users
-  root to: "users#index"
+  root to: "home#index"
+  # get 'welcome' => 'home#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
