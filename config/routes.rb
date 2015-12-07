@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :feedbacks
   resources :cars
   devise_for :users
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :edit]
   root to: "home#index"
   # get 'welcome' => 'home#welcome'
   # The priority is based upon order of creation: first created -> highest priority.

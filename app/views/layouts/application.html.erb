@@ -14,7 +14,7 @@
     <section class="account">
       <% if user_signed_in? %>
       <p>Logged in as:<br>
-        <strong><%= current_user.email %></strong>.
+        <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
       </p>
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
       <%= link_to "Sign_out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
