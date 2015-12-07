@@ -1,15 +1,15 @@
 <%# if user_signed_in? %>
 <div class="home-page">
   <h1>Connecting people who need to travel with drivers who have empty seats</h1>
-  <h2>Share city-to-city car journeys with a trusted community of 20 million verified members</h2>
+  <h2>Share city-to-city car journeys with a trusted community of at least 4 verified members</h2>
   <%# else %>  
 </div>
 <div class="icon_wrapper">
  <section class="flex">
   <div>
-    <h3>Offer a lift</h3>
+    <h3><%= link_to "Offer a lift", new_journey_path  %></h3>
     <p>Share a lift as a driver. Add your trip or daily commute and start sharing the costs</p>
-    <%= image_tag("cargreen.png", :alt => "car", :class=> "car_icon") %>
+    <%= link_to raw(image_tag("cargreen.png", :alt => "car", :class=> "car_icon")), new_journey_path %>
   </div>
   <div>
     <h3>Find a lift</h3>
