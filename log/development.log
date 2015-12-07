@@ -130,3 +130,92 @@ Processing by JourneysController#new as HTML
   Rendered journeys/_form.html.erb (10.1ms)
   Rendered journeys/new.html.erb within layouts/application (11.1ms)
 Completed 200 OK in 38ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/journeys/new" for ::1 at 2015-12-07 14:23:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JourneysController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered journeys/_form.html.erb (28.1ms)
+  Rendered journeys/new.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 257ms (Views: 218.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-12-07 14:23:11 +0000
+
+
+Started GET "/assets/application.self-5eb14d8fbf2f0a78861e11b36b3cc475950dd486a889309ac5d882907505d1e2.css?body=1" for ::1 at 2015-12-07 14:23:11 +0000
+
+
+Started GET "/assets/white_logo-e7ac3946e74574d7eac3d5f383d96245b34176df1f0007ffc72d8623ed4cc16d.png" for ::1 at 2015-12-07 14:23:11 +0000
+
+
+Started GET "/assets/jellyfish_logo-5fee77988bf626bad6ca9fa1113bd1fb9873de29956df932d6dda143610ff623.png" for ::1 at 2015-12-07 14:23:11 +0000
+
+
+Started GET "/users/sign_in" for ::1 at 2015-12-07 14:23:13 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-12-07 14:23:13 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-07 14:35:04 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-5eb14d8fbf2f0a78861e11b36b3cc475950dd486a889309ac5d882907505d1e2.css?body=1" for ::1 at 2015-12-07 14:35:04 +0000
+
+
+Started GET "/assets/application.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-12-07 14:35:04 +0000
+
+
+Started GET "/assets/white_logo-e7ac3946e74574d7eac3d5f383d96245b34176df1f0007ffc72d8623ed4cc16d.png" for ::1 at 2015-12-07 14:35:04 +0000
+
+
+Started GET "/assets/cargreen-6ca700996fe12268ba0f4e7ae442c9a9bb70793688214dc71d45a5ed77e03d17.png" for ::1 at 2015-12-07 14:35:04 +0000
+
+
+Started GET "/assets/searchgreen-92eb161229902c37cb080802d87f6a564a3402041df35a30451d032c9a404893.png" for ::1 at 2015-12-07 14:35:04 +0000
+
+
+Started GET "/assets/jellyfish_logo-5fee77988bf626bad6ca9fa1113bd1fb9873de29956df932d6dda143610ff623.png" for ::1 at 2015-12-07 14:35:04 +0000
+
+
+Started GET "/users/sign_in" for ::1 at 2015-12-07 14:35:08 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-12-07 14:35:08 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/journeys" for ::1 at 2015-12-07 14:35:16 +0000
+Processing by JourneysController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mJourney Load (0.1ms)[0m  SELECT "journeys".* FROM "journeys"
+  Rendered journeys/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 20ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/journeys/new" for ::1 at 2015-12-07 14:35:22 +0000
+Processing by JourneysController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered journeys/_form.html.erb (4.3ms)
+  Rendered journeys/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 25ms (Views: 15.5ms | ActiveRecord: 0.2ms)
