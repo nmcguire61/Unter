@@ -1,28 +1,23 @@
 
 <p>
+  <strong>Avatar:</strong>
+  <%= @user.avatar %>
+</p>
+
+<p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <%= @user.name %><br>Rating:<%= @user.rating_avg %>
 </p>
-
-<p>
-  <strong>Rating avg:</strong>
-  <%= @user.rating_avg %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @user.phone_number %>
-</p>
-
 <p>
   <strong>Description:</strong>
   <%= @user.description %>
 </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar %>
-</p>
+<% if @user.car != nil %>
+<%= link_to "Edit your car:", edit_car_path %>
+<% else %>
+<%= link_to "Add a car:", new_car_path  %>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
