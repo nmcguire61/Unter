@@ -9,7 +9,8 @@
 <body>
   <header class="header">
     <div class="wrapper">
-      <%= image_tag("white_logo.png", :alt => "logo", :class=> "logo") %>
+
+<%= link_to raw(image_tag("white_logo.png", :alt => "logo", :class=> "logo")), '/' %>
     <nav class="nav">
       <ul>
         <br>
@@ -18,6 +19,7 @@
         <li><%=link_to 'Find a lift', new_journey_path  %></li>  
       </ul>
     </nav>
+
     </div>
    
     <section>
