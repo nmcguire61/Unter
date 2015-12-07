@@ -17,8 +17,9 @@ class CarsController < ApplicationController
   end
 
   def create
-    @car = Car.new(car_params)
-
+    @car = Car.new(car_params) do |car|
+      car.user = current_user
+    end
     respond_to do |format|
       if @car.save
         format.html { redirect_to @car, notice: 'Car was successfully created.' }
