@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Journeys</h1>
 
+<div class="journeys">
+<h1>Save on travel costs and meet like minded people</h1>
 <table>
   <thead>
     <tr>
@@ -13,11 +14,11 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @journeys.each do |journey| %>
       <tr>
-        <td><%= journey.starting_point %></td>
+  
+       <td><%= journey.starting_point %></td>
         <td><%= journey.ending_point %></td>
         <td><%= journey.starting_time %></td>
         <td><%= journey.user_id %></td>
@@ -27,8 +28,10 @@
         <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
+</div>
 
 <br>
 

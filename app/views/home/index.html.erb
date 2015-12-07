@@ -1,0 +1,22 @@
+<%# if user_signed_in? %>
+<div class="home-page">
+  <h1>Connecting people who need to travel with drivers who have empty seats</h1>
+  <h2>Share city-to-city car journeys with a trusted community of 20 million verified members</h2>
+  <%# else %>  
+</div>
+<div class="icon_wrapper">
+ <section class="flex">
+  <div>
+    <h3>Offer a lift</h3>
+    <p>Share a lift as a driver.Add your trip or daily commute and start sharing the costs</p>
+    <%= image_tag("cargreen.png", :alt => "car", :class=> "car_icon") %>
+  </div>
+  <div>
+    <h3>Find a lift</h3>
+    <p>Request a lift as a passenger. Save on travel costs and meet like minded people</p>
+    <%= image_tag("searchgreen.png", :alt => "search", :class=> "search_icon") %>
+  </div>
+  </section>
+
+
+</div>
