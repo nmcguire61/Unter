@@ -162,28 +162,33 @@ h3 {
 
 }
   /*END HOME PAGE*/
-/*.nav {
+.nav {
   margin: 0 auto;
-  max-width: 70%;
+  max-width: 40%;
   text-align: center;
+ 
 }
 .nav ul {
   margin: 0;
   padding: 0;
+  
 }
 .nav li {
   display: inline-block;
   list-style-type: none;
+  border-color: #ff3660;
+  border-radius: 3px;
 }
 .nav a {
   color: white;
   display: inline-block;
-  padding: 25px 20px;
+  padding: 8px 8px;
+  font-size: 15px;
 }
 
 .nav a:hover {
-  color: #D31900;
-}*/
+  color: #ff3660;
+}
 
 
 
