@@ -6754,3 +6754,46 @@ Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb062
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 15:45:37 +0000
 >>>>>>> ef8e180b9ff55e421fc72279c999cae36b44c65e
+
+
+Started GET "/journeys/new" for ::1 at 2015-12-07 15:51:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JourneysController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 52ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-12-07 15:51:48 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (160.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 238ms (Views: 237.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 15:51:48 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 15:51:48 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 15:51:48 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 15:51:48 +0000
+
+
+Started GET "/assets/white_logo-e7ac3946e74574d7eac3d5f383d96245b34176df1f0007ffc72d8623ed4cc16d.png" for ::1 at 2015-12-07 15:51:48 +0000
+
+
+Started GET "/assets/application.self-a8415633807a767e5b811a1670afeb6c4f0a06c539d7cddbabdfa2d3043d9c59.css?body=1" for ::1 at 2015-12-07 15:51:48 +0000
+
+
+Started GET "/assets/cargreen-6ca700996fe12268ba0f4e7ae442c9a9bb70793688214dc71d45a5ed77e03d17.png" for ::1 at 2015-12-07 15:51:48 +0000
+
+
+Started GET "/assets/searchgreen-92eb161229902c37cb080802d87f6a564a3402041df35a30451d032c9a404893.png" for ::1 at 2015-12-07 15:51:48 +0000
+
+
+Started GET "/assets/jellyfish_logo-5fee77988bf626bad6ca9fa1113bd1fb9873de29956df932d6dda143610ff623.png" for ::1 at 2015-12-07 15:51:48 +0000
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
