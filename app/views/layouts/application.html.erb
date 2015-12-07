@@ -11,21 +11,22 @@
     <div class="wrapper">
       <%= image_tag("white_logo.png", :alt => "logo", :class=> "logo") %>
     </div>
-    <section class="account">
+    <section>
+      <div class="account"
       <% if user_signed_in? %>
       <p>Logged in as:<br>
         <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
       </p>
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
       <%= link_to "Sign_out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
-      
+      </div>
       <% else %>
       <div class="register">
         <%= link_to "Sign up", new_user_registration_path, :class => 'signup btn'  %> |
         <%= link_to "Login", new_user_session_path, :class => 'login btn'  %>
         <% end %>
       </div>
-    </section>
+    
   </header>
 
 

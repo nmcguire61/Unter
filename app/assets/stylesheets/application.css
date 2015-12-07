@@ -34,7 +34,11 @@ color: white;
 /*END FOOTER*/
 
 /*HOME PAGE*/
-
+.register {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
 .btn {
   text-align: center;
   padding: 10px;
@@ -67,7 +71,6 @@ color: white;
 }
 .home-page {
   margin-top: 50px;
-  
   color: white;
   text-align: center;
 }
@@ -142,7 +145,7 @@ h3 {
 .account {
   color: white;
   padding: 5px 60px 0 0;
-  position: absolute;
+  /*position: absolute;*/
   top: 0;
   right: 0;
 }
