@@ -2154,8 +2154,13 @@ ActionController::RoutingError (No route matches [GET] "/images/jellyfish_logo.p
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.8ms)
 
 
+<<<<<<< HEAD
+Started GET "/" for ::1 at 2015-12-07 11:41:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+=======
 Started GET "/" for ::1 at 2015-12-07 11:41:07 +0000
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+>>>>>>> 325b9eb395fe3e212984ca84e58e176f01182196
 
 ActionController::RoutingError (uninitialized constant HomeController):
   activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `const_get'
@@ -2217,6 +2222,31 @@ ActionController::RoutingError (uninitialized constant HomeController):
   /Users/user/.rbenv/versions/2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
 
 
+<<<<<<< HEAD
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.5ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.1ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (76.1ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.7ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.3ms)
+
+
+Started GET "/cars" for ::1 at 2015-12-07 11:41:42 +0000
+Processing by CarsController#index as HTML
+  [1m[35mCar Load (0.1ms)[0m  SELECT "cars".* FROM "cars"
+  Rendered cars/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 177ms (Views: 173.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/white_logo.png" for ::1 at 2015-12-07 11:41:43 +0000
+=======
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.5ms)
@@ -2317,6 +2347,7 @@ Completed 200 OK in 193ms (Views: 187.8ms | ActiveRecord: 0.5ms)
 
 
 Started GET "/images/white_logo.png" for ::1 at 2015-12-07 11:41:54 +0000
+>>>>>>> 325b9eb395fe3e212984ca84e58e176f01182196
 
 ActionController::RoutingError (No route matches [GET] "/images/white_logo.png"):
   actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2345,6 +2376,24 @@ ActionController::RoutingError (No route matches [GET] "/images/white_logo.png")
   /Users/user/.rbenv/versions/2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
 
 
+<<<<<<< HEAD
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.8ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.4ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.5ms)
+
+
+Started GET "/images/jellyfish_logo.png" for ::1 at 2015-12-07 11:41:43 +0000
+=======
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
@@ -2463,6 +2512,7 @@ Started GET "/assets/application.self-5eb14d8fbf2f0a78861e11b36b3cc475950dd486a8
 
 
 Started GET "/images/jellyfish_logo.png" for ::1 at 2015-12-07 11:44:53 +0000
+>>>>>>> 325b9eb395fe3e212984ca84e58e176f01182196
 
 ActionController::RoutingError (No route matches [GET] "/images/jellyfish_logo.png"):
   actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
@@ -2491,6 +2541,21 @@ ActionController::RoutingError (No route matches [GET] "/images/jellyfish_logo.p
   /Users/user/.rbenv/versions/2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
 
 
+<<<<<<< HEAD
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.0ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.2ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.0ms)
+=======
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
@@ -2730,6 +2795,7 @@ ActionController::RoutingError (No route matches [GET] "/images/jellyfish_logo.p
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/user/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.9ms)
+<<<<<<< HEAD
 
 
 Started GET "/" for ::1 at 2015-12-07 11:54:10 +0000
@@ -2779,3 +2845,6 @@ Started GET "/assets/cargreen-6ca700996fe12268ba0f4e7ae442c9a9bb70793688214dc71d
 
 
 Started GET "/assets/jellyfish_logo-5fee77988bf626bad6ca9fa1113bd1fb9873de29956df932d6dda143610ff623.png" for ::1 at 2015-12-07 11:55:16 +0000
+=======
+>>>>>>> 325b9eb395fe3e212984ca84e58e176f01182196
+>>>>>>> 252b9416c860f4f6252fcbb6ec69f501cc2c35dd
