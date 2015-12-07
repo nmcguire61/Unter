@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    @car
+    @cars = Car.all
   end
 
   def show
@@ -56,7 +56,7 @@ class CarsController < ApplicationController
     end
 
     def car_params
-      params.require(:car).permit(:type, :seats, :user_id)
+      params.require(:car).permit(:brand, :seats, :user_id)
     end
 end
 
