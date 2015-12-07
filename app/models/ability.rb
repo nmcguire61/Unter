@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
    #can :manage, :all
 
-    # alias_action :create, :read, :update, :destroy, :to => :crud
+    alias_action :create, :read, :update, :destroy, :to => :crud
 
     user ||= User.new
     if user.role? :admin
@@ -13,7 +13,7 @@ class Ability
       can :sign_in
       can :read, :all
       # can :crud, Journey, :user_id => user.id
-      # can :crud, Car, :user_id => user.id
+      can :crud, Car, :user_id => current_user.id
       # can :crud, Feedback, :user_id => user.id
       # can :crud, User, :user_id => user.id
     else
