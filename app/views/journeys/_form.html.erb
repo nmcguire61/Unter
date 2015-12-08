@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :starting_point %><br>
-    <%= f.text_field :starting_point, id: 'txtStart' %>
+    <%= f.text_field :starting_point, id: 'txtStart', :required => true %>
   </div>
   <div class="field">
     <%= f.label :ending_point %><br>
-    <%= f.text_field :ending_point, id: 'txtEnd'%>
+    <%= f.text_field :ending_point, id: 'txtEnd', :required => true%>
   </div>
   <div class="field">
     <%= f.label :starting_time %><br>
-    <%= f.datetime_select :starting_time %>
+    <%= f.datetime_select :starting_time, :required => true %>
   </div>
   <div class="actions">
     <%= f.submit %>

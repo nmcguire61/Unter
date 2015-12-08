@@ -13,9 +13,20 @@
     <%= link_to raw(image_tag("white_logo.png", :alt => "logo", :class=> "logo")), '/' %>
     <nav class="nav">
       <ul>
+      <% if user_signed_in? %>
         <li><%=link_to 'Home', '/', :class => 'btn' %></li>
+        <% if current_user.car.present? %>
         <li><%=link_to 'Offer a Lift', new_journey_path, :class => 'btn' %></li>
-        <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>  
+        <% else %>
+        <li>Please register a car to create journeys!</li>
+        <% end %>
+        <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
+      <% else %>  
+        <li><%=link_to 'Home', '/', :class => 'btn' %></li>
+        <li><%=link_to 'Offer a Lift', :class => 'btn' %></li>
+        <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
+      <% end %>
+
       </ul>
     </nav>
     <% if user_signed_in? %>
