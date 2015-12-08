@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-   can :manage, :all
+   # can :manage, :all
 
     alias_action :create, :read, :update, :destroy, :to => :crud
 
@@ -10,11 +10,12 @@ class Ability
     if user.role? :admin
       can :manage, :all
     elsif user.role? :user
-      can :manage, :all
-      # can :sign_in
-      # can :read, :all
-      # can :crud, Journey, :user_id => user.id
-      # can :crud, Car, :user_id => current_user.id
+
+      can :sign_in
+      can :read, :all
+      can :crud, Journey, :user_id => user.id
+      can :crud, Car, :user_id => user.id
+
       # can :crud, Feedback, :user_id => user.id
       # can :crud, User, :user_id => user.id
     else
