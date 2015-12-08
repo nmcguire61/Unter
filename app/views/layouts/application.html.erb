@@ -15,7 +15,7 @@
       <ul>
         <li><%=link_to 'Home', '/', :class => 'btn' %></li>
         <li><%=link_to 'Offer a Lift', new_journey_path, :class => 'btn' %></li>
-        <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>  
+        <li><%=link_to 'Find a lift', journeys_path,  :class => 'btn' %></li>  
       </ul>
     </nav>
     <% if user_signed_in? %>
@@ -37,6 +37,21 @@
   <p class="alert"><%= alert %></p> 
 
   <%= yield %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <footer class="footer">
