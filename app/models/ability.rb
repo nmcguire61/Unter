@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-   #can :manage, :all
+   can :manage, :all
 
     alias_action :create, :read, :update, :destroy, :to => :crud
 
