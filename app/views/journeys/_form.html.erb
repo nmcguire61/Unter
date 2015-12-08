@@ -1,3 +1,4 @@
+<div class="new-journey">
 <%= form_for(@journey) do |f| %>
   <% if @journey.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-
+<section>
   <div class="field">
     <%= f.label :starting_point %><br>
     <%= f.text_field :starting_point %>
@@ -27,11 +28,9 @@
     <%= f.submit %>
   </div>
 
-  <div id="map"></div>
-
-
+  <div id="map">
   <div id="floating-panel">
-    <b>Start: </b>
+   
     <select id="start" onchange="calcRoute();">
       <option value="london, gb">London</option>
       <option value="glasgow, uk">Glasgow</option>
@@ -49,7 +48,7 @@
       <option value="kirkcaldy, uk">Kirkcaldy</option>
       <option value="dundee, uk">Dundee</option>
     </select>
-    <b>End: </b>
+   
     <select id="end" onchange="calcRoute();">
       <option value="london, gb">London</option>
       <option value="glasgow, uk">Glasgow</option>
@@ -105,5 +104,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP8zQAzJHeargrcVOr5gXbP9oqxjMfCbs&signed_in=true&callback=initMap"
   async defer></script>
 
-
 <% end %>
+</section>
+</div>

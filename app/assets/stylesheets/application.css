@@ -197,13 +197,22 @@ h3 {
   font-family: "brandon-grotesque", sans-serif;
 }
 
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
 
 /*FOOTER*/
 .footer { 
     background-color: #6b9297;
     margin-top: 50px;
-    height:80px;
+    height: 80px;
     opacity: 0.9;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+
 }
 .jellyfish {
   max-width: 10%;
@@ -222,6 +231,7 @@ html, body {
   width: 300px;
 }
 #floating-panel {
+  display: inline-block;
   top: 10px;
   left: 15%;
   z-index: 5;
@@ -231,9 +241,19 @@ html, body {
   text-align: center;
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
-  padding-left: 10px;
+  padding-left: 5px;
+  width: 40%;
+  float: top-right;
+  margin-top: 50px;
 }
-
+.new-journey {
+    max-width: 80%;
+    color: white;
+    margin: 0px auto;
+    padding: 60px;
+    background: rgba(10,10,10,.8);
+    padding-bottom: 100px;
+}
 
 
 
