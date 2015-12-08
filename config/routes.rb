@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :journeys do
-    resources :passengers
+    resources :passengers do
+      post  'accept'
+      post 'reject'
+    end
     resources :drivers
   end
   resources :feedbacks
