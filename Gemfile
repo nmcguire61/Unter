@@ -4,7 +4,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mailboxer'
 gem 'cancancan'
-
+gem 'compass', '~> 1.0', '>= 1.0.3'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
