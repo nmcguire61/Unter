@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field mirror1" placeholder="one">
     <%= f.label :starting_point %><br>
-    <%= f.text_field :starting_point %>
+    <%= f.text_field :starting_point, id: 'txtStart', :required => true %>
   </div>
   <div class="field">
     <%= f.label :ending_point %><br>
-    <%= f.text_field :ending_point %>
+    <%= f.text_field :ending_point, id: 'txtEnd', :required => true%>
   </div>
   <div class="field">
     <%= f.label :starting_time %><br>
-    <%= f.datetime_select :starting_time %>
+    <%= f.datetime_select :starting_time, :required => true %>
   </div>
   <div class="actions">
     <%= f.submit %>
@@ -32,7 +32,7 @@
 
   <div id="floating-panel">
     <b>Start: </b>
-    <select id="start" onchange="calcRoute();">
+    <select id="start" class="mirror1" placeholder="two" onchange="calcRoute();">
       <option value="london, gb">London</option>
       <option value="glasgow, uk">Glasgow</option>
       <option value="birmingham, uk">Birmingham</option>
@@ -97,6 +97,31 @@
           directionsDisplay.setDirections(response);
         } else {
           window.alert('Directions request failed due to ' + status);
+        }
+      });
+    }
+
+    function calcRoute() {
+      var directionsDisplay = new google.maps.DirectionsRenderer();
+      var startPoint = document.getElementById("start");
+      var endPoint = document.getElementById("end");
+      var start = startPoint.value;
+      var end = endPoint.value;
+      var startTxt = $('#start option:selected').text();
+      var endTxt = $('#end option:selected').text();
+      console.log("Start: " + startTxt + " End: " + endTxt);
+      $('#txtStart').val(startTxt);
+      $('#txtEnd').val(endTxt);
+
+      var directionsService = new google.maps.DirectionsService();
+      var request = {
+        origin:start,
+        destination:end,
+        travelMode: google.maps.TravelMode.DRIVING
+      };
+      directionsService.route(request, function(result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(result);
         }
       });
     }
