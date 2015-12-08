@@ -29,14 +29,38 @@
   <%= @journey.status %>
 </p>
 
-<% @journey.passengers.map do |p| %>
-<li><%= p.user.name %><%= p.price %><%= p.status %><%= button_to "Accept", journey_passenger_accept_path(@journey, p) %><%= button_to "Reject", journey_passenger_reject_path(@journey, p) %></li>
 
+<% @journey.passengers.each do |p| %>
+  <% status = p.status %>
+  <% if status == 'Accepted' %>
+    <%= p.user.name %> is accepted!
+  <% elsif status == 'Rejected' %>
+    <%= p.user.name %> is rejected!
+  <% else %>
+    <% if @journey.driver.user_id == current_user.id %>
+    <%= p.user.name %><%= p.price %><%= p.status %>
+    <%= button_to "Accept", journey_passenger_accept_path(@journey, p) %>
+    <%= button_to "Reject", journey_passenger_reject_path(@journey, p) %>
+    <% else %>
+    <%= p.user.name %><%= p.price %><%= p.status %>
+    <% end %>
+  <% end %>
 <% end %>
 
 
+
+
+
+
+<% if @journey.passengers.any? {|p| p[:user_id] = current_user.id} %>
+
+<strong>You already joined this journey!</strong>
+<% else %>
 <strong>Join as a passenger:</strong>
 <%= link_to "Join", new_journey_passenger_path(@journey)  %>
+
+
+<% end %>
 
 
 
