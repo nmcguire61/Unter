@@ -2,6 +2,7 @@ class PassengersController < ApplicationController
   # load_and_authorize_resource
   before_action :set_passenger, only: [:show, :edit, :update, :destroy]
 
+
   def index
     @passengers = Passenger.all
   end
@@ -18,11 +19,12 @@ class PassengersController < ApplicationController
   end
 
   def create
-    @passenger = Passenger.new(passenger_params)
-
+    @journey = Journey.find(params[:journey_id])
+    @passenger = @journey.passengers.new(passenger_params)
+    @passenger.status = "pending"
     respond_to do |format|
       if @passenger.save
-        format.html { redirect_to @passenger, notice: 'Passenger was successfully created.' }
+        format.html { redirect_to @passenger.journey, notice: 'Passenger was successfully created.' }
         format.json { render :show, status: :created, location: @passenger }
       else
         format.html { render :new }

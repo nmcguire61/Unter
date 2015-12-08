@@ -24,6 +24,14 @@
   <%= @journey.status %>
 </p>
 
+<<<<<<< Updated upstream
 
 <%= link_to 'Edit', edit_journey_path(@journey) %> |
+=======
+<strong>Join as a passenger:</strong>
+<%= link_to "Join", new_journey_passenger_path(@journey)  %>
+
+
+<%#= link_to 'Edit', edit_journey_path(@journey) %> |
+>>>>>>> Stashed changes
 <%= link_to 'Back', journeys_path %>
