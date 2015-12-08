@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   end
   resources :feedbacks
   resources :cars
-  devise_for :users
-  resources :users, only: [:show, :index, :edit]
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :users, only: [:show, :index]
   root to: "home#index"
   # get 'welcome' => 'home#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
