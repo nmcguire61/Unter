@@ -133,8 +133,9 @@ h3 {
 .account {
   color: white;
   position: absolute;
-  top: 20px;
+  top: 15px;
   right: 10px;
+  font-size: 15px;
 }
 .account img { 
   border-radius: 20px;
@@ -146,7 +147,9 @@ h3 {
 }
 .account p {
   font-size: .8em;
-
+}
+.account a {
+  font-weight: 100;
 }
 
 /*END HOME PAGE*/
@@ -179,7 +182,8 @@ h3 {
 }
 
 .nav a:hover {
-  color: #ff3660;
+  background-color: #ff3660;
+  color: white;
 }
 
 

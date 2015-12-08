@@ -20,11 +20,10 @@
     </nav>
     <% if user_signed_in? %>
       <div class="account">
-        <p>Logged in as:<br>
           <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
         </p>
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
-        <%= link_to "Sign_out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
       </div>
     <% else %>
     <div class="register">

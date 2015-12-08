@@ -12,7 +12,7 @@ class Ability
     elsif user.role? :user
       can :sign_in
       can :read, :all
-      # can :crud, Journey, :user_id => user.id
+      can :crud, Journey, :user_id => user.id
       can :crud, Car, :user_id => current_user.id
       # can :crud, Feedback, :user_id => user.id
       # can :crud, User, :user_id => user.id
