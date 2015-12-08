@@ -17,7 +17,11 @@ class JourneysController < ApplicationController
   end
 
   def create
-    @journey = Journey.new(journey_params)
+    @journey = Journey.new(journey_params) do |journey|
+      journey.user = current_user
+      journey.status = "open"
+      journey.driver = Driver.new(user: current_user)
+    end
 
     respond_to do |format|
       if @journey.save
