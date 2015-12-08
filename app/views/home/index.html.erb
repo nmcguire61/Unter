@@ -12,7 +12,7 @@
     <%= link_to raw(image_tag("cargreen.png", :alt => "car", :class=> "car_icon")), new_journey_path %>
   </div>
   <div>
-    <h3>Find a lift</h3>
+    <h3><%= link_to "Find a lift", journeys_path %></h3>
     <p>Request a lift as a passenger. Save on travel costs and meet like minded people</p>
     <%= link_to raw(image_tag("searchgreen.png", :alt => "search", :class=> "search_icon")), journeys_path %>
   </div>
