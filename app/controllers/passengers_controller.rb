@@ -21,6 +21,7 @@ class PassengersController < ApplicationController
   def create
     @journey = Journey.find(params[:journey_id])
     @passenger = @journey.passengers.new(passenger_params)
+    @passenger.user = current_user
     @passenger.status = "pending"
     respond_to do |format|
       if @passenger.save
@@ -43,6 +44,19 @@ class PassengersController < ApplicationController
         format.json { render json: @passenger.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def accept
+    @passenger = Passenger.find(params[:passenger_id])
+    @passenger.status = "Accepted"
+    @passenger.save
+    redirect_to @passenger.journey
+  end
+  def reject
+    @passenger = Passenger.find(params[:passenger_id])
+    @passenger.status = "Rejected"
+    @passenger.save
+    redirect_to @passenger.journey
   end
 
   def destroy

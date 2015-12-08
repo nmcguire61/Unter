@@ -16,7 +16,12 @@
 
 <p>
   <strong>Car:</strong>
-  <%= @journey.car %>
+  <%= @journey.car.brand %>
+</p>
+
+<p>
+  <strong>Number of seats:</strong>
+  <%= @journey.car.seats %>
 </p>
 
 <p>
@@ -24,14 +29,29 @@
   <%= @journey.status %>
 </p>
 
-<<<<<<< Updated upstream
+<% @journey.passengers.map do |p| %>
+<li><%= p.user.name %><%= p.price %><%= p.status %><%= button_to "Accept", journey_passenger_accept_path(@journey, p) %><%= button_to "Reject", journey_passenger_reject_path(@journey, p) %></li>
 
-<%= link_to 'Edit', edit_journey_path(@journey) %> |
-=======
+<% end %>
+
+
 <strong>Join as a passenger:</strong>
 <%= link_to "Join", new_journey_passenger_path(@journey)  %>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <%#= link_to 'Edit', edit_journey_path(@journey) %> |
->>>>>>> Stashed changes
 <%= link_to 'Back', journeys_path %>

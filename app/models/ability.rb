@@ -10,12 +10,7 @@ class Ability
     if user.role? :admin
       can :manage, :all
     elsif user.role? :user
-      can :sign_in
-      can :read, :all
-      can :crud, Journey, :user_id => user.id
-      can :crud, Car, :user_id => current_user.id
-      # can :crud, Feedback, :user_id => user.id
-      # can :crud, User, :user_id => user.id
+can :manage, :all
     else
       can :read, Journey
       can :sign_in
