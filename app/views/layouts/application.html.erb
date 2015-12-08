@@ -10,48 +10,50 @@
 </head>
 <body>
 
-  <header class="header flex">
+<header class="header flex">
     <%= link_to raw(image_tag("white_logo.png", :alt => "logo", :class=> "logo")), '/' %>
     <nav class="nav">
       <ul>
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
         <li><%=link_to 'Home', '/', :class => 'btn' %></li>
         <% if current_user.car.present? %>
         <li><%=link_to 'Offer a Lift', new_journey_path, :class => 'btn' %></li>
         <% else %>
         <li>Please register a car to create journeys!</li>
         <% end %>
-
-        <li><%=link_to 'Find a lift', journeys_path,  :class => 'btn' %></li>
+        <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
       <% else %>  
-
         <li><%=link_to 'Home', '/', :class => 'btn' %></li>
         <li><%=link_to 'Offer a Lift', :class => 'btn' %></li>
         <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
-        <% end %>
+      <% end %>
 
       </ul>
     </nav>
     <% if user_signed_in? %>
-    <div class="account">
-      <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
-    </p>
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
+      <div class="account">
+          <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
+        </p>
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
+        <% else %>
+        <div class="register">
+          <%= link_to "Sign up", new_user_registration_path, :class => 'signup btn'  %> |
+          <%= link_to "Login", new_user_session_path, :class => 'login btn'  %>
 
+      </div>
+     <% end %> 
+    </header>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> 
+
+    <%= yield %>
+
+
+    <footer class="footer">
+      <%= image_tag("jellyfish_logo.png", :class=> "jellyfish") %> 
+    </footer>
   </div>
-  <% end %> 
-</header>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> 
-
-<%= yield %>
-
-
-<footer class="footer">
-  <%= image_tag("jellyfish_logo.png", :class=> "jellyfish") %> 
-</footer>
-</div>
 </body>
 </html>

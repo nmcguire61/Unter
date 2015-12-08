@@ -208,7 +208,7 @@ h3 {
     margin-top: 50px;
     height: 80px;
     opacity: 0.9;
-    position: absolute;
+    position: relative;
     width: 100%;
     bottom: 0px;
     left: 0px;
