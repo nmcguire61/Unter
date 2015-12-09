@@ -7,7 +7,6 @@ class JourneysController < ApplicationController
   end
 
   def show
-    
   end
 
   def new

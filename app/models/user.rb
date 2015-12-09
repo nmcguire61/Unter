@@ -15,6 +15,15 @@ class User < ActiveRecord::Base
 
   before_create :set_default_role
 
+  def feedback
+
+    DriverFeedback.joins(:target).where(drivers: { user_id: id } ) +
+    PassengerFeedback.joins(:target).where(passengers: { user_id: id } )
+
+
+
+  end
+
   def set_default_role
     self.role = "user" unless role
   end 
