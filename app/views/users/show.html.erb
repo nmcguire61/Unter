@@ -1,25 +1,31 @@
 
 <p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar %>
-</p>
-
-<p>
   <strong>Name:</strong>
-  <%= @user.name %><br>Rating:<%= @user.rating_avg %>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>Rating:</strong>
+  <%= @user.rating_avg %>
+</p>
+<p>
+  <strong>Car:</strong>
+  <%= @user.car.brand %>
+  <br>
+  <% if correct_user?(@user) %>
+    <% if @user.car != nil  %>
+      <%= link_to "Edit car details", edit_car_path, :class => 'btn smaller' %>
+    <% else %>
+      <%= link_to "Add a car here", new_car_path, :class => 'btn smaller' %>
+    <% end %>
+  <% end %>
 </p>
 <p>
   <strong>Description:</strong>
   <%= @user.description %>
 </p>
 
-<% if correct_user?(@user) %>
-  <% if @user.car != nil  %>
-  <%= link_to "Edit your car:", edit_car_path %>
-  <% else %>
-  <%= link_to "Add a car:", new_car_path  %>
-  <% end %>
-<% end %>
+
+
 
 
 

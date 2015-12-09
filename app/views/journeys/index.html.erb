@@ -21,7 +21,7 @@
        <td><%= journey.starting_point %></td>
         <td><%= journey.ending_point %></td>
         <td><%= journey.starting_time %></td>
-        <td><%= journey.user_id %></td>
+        <td><%= journey.user.name %></td>
         <td><%= journey.status %></td>
         <td><%= link_to 'Show', journey %></td>
         <td><%= link_to 'Edit', edit_journey_path(journey) %></td>
@@ -31,11 +31,11 @@
 
   </tbody>
 </table>
-</div>
+
 
 <br>
 
 <%= link_to 'New Journey', new_journey_path %>
 
-
+</div>
 
