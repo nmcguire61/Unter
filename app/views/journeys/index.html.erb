@@ -15,19 +15,22 @@
     </tr>
   </thead>
   <tbody>
-    <% @journeys.each do |journey| %>
-      <tr>
-  
-       <td><%= journey.starting_point %></td>
-        <td><%= journey.ending_point %></td>
-        <td><%= journey.starting_time %></td>
-        <td><%= journey.user.name %></td>
-        <td><%= journey.status %></td>
-        <td><%= link_to 'Show', journey %></td>
-        <td><%= link_to 'Edit', edit_journey_path(journey) %></td>
-        <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @journeys.each do |journey|  %>
+      <% if journey.starting_time >= Time.now %>
+        <tr>
+    
+          <td><%= journey.starting_point %></td>
+          <td><%= journey.ending_point %></td>
+          <td><%= journey.starting_time %></td>
+          <td><%= journey.user.name %></td>
+          <td><%= journey.status %></td>
+          <td><%= link_to 'Show', journey %></td>
+          <td><%= link_to 'Edit', edit_journey_path(journey) %></td>
+          <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
+
 
   </tbody>
 </table>
