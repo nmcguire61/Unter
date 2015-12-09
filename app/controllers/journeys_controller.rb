@@ -55,6 +55,13 @@ class JourneysController < ApplicationController
     end
   end
 
+  def close
+    @journey = Journey.find(params[:journey_id])
+    @journey.status = "closed"
+    @journey.save
+    redirect_to @journey
+  end
+
   private
 
     def set_journey

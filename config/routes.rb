@@ -5,14 +5,22 @@ Rails.application.routes.draw do
   resources :payment_transactions
 
   resources :journeys do
+      post 'close'
     resources :passengers do
       post  'accept'
       post 'reject'
     end
     resources :drivers
   end
-  resources :feedbacks
-  resources :cars
+  
+  resources :feedback, only: [] do
+    collection do
+        get 'new/:target/:id', :to => "feedbacks#new", :as => 'new'
+        post '/:target/:id', :to => "feedbacks#create", :as => 'create'
+      end
+  end
+
+    resources :cars
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users, only: [:show, :index]
   resources :conversations, only: [:index, :show, :destroy] do
@@ -71,7 +79,7 @@ Rails.application.routes.draw do
   #   end
 
   # Example resource route with concerns:
-  #   concern :toggleable do
+  #   0 :toggleable do
   #     post 'toggle'
   #   end
   #   resources :posts, concerns: :toggleable
