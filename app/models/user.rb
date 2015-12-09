@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :passengers
   has_many :drivers
   # has_many :feedbacks, :through => :passenger
+  has_many :given_feedback, class_name: 'Feedback'
 
   before_create :set_default_role
 

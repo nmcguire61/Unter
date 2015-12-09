@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209130015) do
+ActiveRecord::Schema.define(version: 20151209151850) do
 
   create_table "cars", force: :cascade do |t|
     t.string   "brand"
@@ -31,11 +31,13 @@ ActiveRecord::Schema.define(version: 20151209130015) do
   end
 
   create_table "feedbacks", force: :cascade do |t|
-    t.integer  "passenger_id"
     t.text     "comment"
     t.integer  "rating"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "type"
+    t.integer  "target_id"
   end
 
   create_table "journeys", force: :cascade do |t|
