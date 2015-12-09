@@ -1,11 +1,11 @@
-
+<div class="journeys">
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
 <p>
   <strong>Rating:</strong>
-  <%= @user.rating_avg %>
+  <%= @user.feedback_ratings_average %>
 </p>
 <p>
   <strong>Car:</strong>
@@ -28,6 +28,8 @@
 <%= feedback.comment %><br>
 <% end  %>
 
+
+
 <% if current_user.id = @user.id %>
 List my finished journeys/Leave feedback
 <% @user.journeys.each do |journey| %>
@@ -36,3 +38,4 @@ List my finished journeys/Leave feedback
 <% end %>
 
 <%= link_to 'Back', users_path %>
+</div>
