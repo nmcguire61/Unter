@@ -7,7 +7,7 @@ body {
 .block-white {
   background: white;
   height: 600px;
-  margin-top: 80px
+  margin-top: 0px;
 }
 .logo {
   margin: 0 0 0 20px;
@@ -104,7 +104,7 @@ h3 {
 .icon_wrapper {
   max-width: 80%;
   color: white;
-  margin: 0px auto;
+  margin: 50px auto;
   padding: 40px;
   background: rgba(10,10,10,.8);
 }
@@ -192,8 +192,11 @@ h3 {
 
 /*JOURNEYS*/
 .journeys {
-  text-align: center;
+  max-width: 80%;
   color: white;
+  margin: 40px auto;
+  padding: 60px;
+  background: rgba(10,10,10,.8);
   font-family: "brandon-grotesque", sans-serif;
 }
 
@@ -205,7 +208,6 @@ h3 {
 /*FOOTER*/
 .footer { 
     background-color: #6b9297;
-    margin-top: 50px;
     height: 80px;
     opacity: 0.9;
     position: relative;
@@ -226,36 +228,52 @@ html, body {
   margin: 0;
   padding: 0;
 }
+input {
+  padding: 5px;
+  margin: 5px 0 10px 0;
+}
+input[type=submit]{
+  border: 0;
+  background-color: white;
+  margin: 15px auto;
+  display: block;
+}
 #map {
   height: 300px;
-  width: 300px;
+  width: 500px;
 }
-#floating-panel {
-  display: inline-block;
-  top: 10px;
-  left: 15%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 5px;
-  width: 40%;
-  float: top-right;
-  margin-top: 50px;
+#floating-panel select {
+ margin: 10px 10px 10px 0;
 }
 .new-journey {
     max-width: 80%;
     color: white;
-    margin: 0px auto;
+    margin: 40px auto;
     padding: 60px;
     background: rgba(10,10,10,.8);
     padding-bottom: 100px;
 }
+.new-journey .flex {
+  justify-content: space-between;
+}
+.map_img {
+  width: 100%;
+  margin-top: 0;
+}
+.google-map {
+  
+}
+.map-form {
+}
+.form-price {
+    max-width: 80%;
+    color: white;
+    margin: 40px auto;
+    text-align: center;
+    padding: 60px;
+    background: rgba(10,10,10,.8);
+    font-family: "brandon-grotesque", sans-serif;
 
-
-
+}
 
 
