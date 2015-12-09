@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 20151209130015) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transactions", force: :cascade do |t|
+  create_table "payment_transactions", force: :cascade do |t|
     t.integer "journey_id"
     t.integer "journey_cost"
     t.integer "profit"
