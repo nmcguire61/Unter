@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 <div class="user-form">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
+=======
+<div class="edit_profile">
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+>>>>>>> Stashed changes
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
@@ -15,16 +20,24 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
+<<<<<<< Updated upstream
     <div class="field">
       <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
+=======
+  <div class="field">
+    <%= f.label :password %> <i><!-- (leave blank if you don't want to change it) --></i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+>>>>>>> Stashed changes
 
     <div class="field">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
+<<<<<<< Updated upstream
     <div class="field">
       <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
       <%= f.password_field :current_password, autocomplete: "off" %>
@@ -34,10 +47,27 @@
       <%= f.submit "Update" %>
     </div>
   <% end %>
+=======
+  <div class="field">
+    <%= f.label :current_password %> <i><!-- (we need your current password to confirm your changes) --></i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update", :class=> "btn" %>
+  </div>
+<% end %>
+>>>>>>> Stashed changes
 
   <h3>Cancel my account</h3>
 
+<<<<<<< Updated upstream
   <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
   <%= link_to "Back", :back %>
+=======
+<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class=> "btn" %></p>
+
+<%#= link_to "Back", :back %>
+>>>>>>> Stashed changes
 </div>
