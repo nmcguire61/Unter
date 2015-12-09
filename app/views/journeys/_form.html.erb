@@ -10,7 +10,7 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+<% end %>
 
 
 <section>
@@ -31,7 +31,7 @@
     <%= f.submit %>
   </div>
 
-  <div id="map">
+<div class="google-map">
   <div id="floating-panel">
 
     <b>Start: </b>
@@ -72,6 +72,9 @@
 
     </select>
   </div>
+
+  <div id="map">
+  
   <script>
     function initMap() {
       console.log("hello iwona");
@@ -132,7 +135,9 @@
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP8zQAzJHeargrcVOr5gXbP9oqxjMfCbs&signed_in=true&callback=initMap"
   async defer></script>
-
-<% end %>
+  
+</div>
+ </div> <!-- end google maps--> 
 </section>
+<% end %>
 </div>

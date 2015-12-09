@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
   <title>Unter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="app/application.css" type="text/css">
 
 </head>
 <body>
@@ -21,7 +22,7 @@
         <% else %>
         <li>Please register a car to create journeys!</li>
         <% end %>
-        <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
+        <li><%=link_to 'Find a lift', journeys_path,  :class => 'btn' %></li>
       <% else %>  
         <li><%=link_to 'Home', '/', :class => 'btn' %></li>
         <li><%=link_to 'Offer a Lift', :class => 'btn' %></li>
