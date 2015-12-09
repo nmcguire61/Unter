@@ -1,5 +1,5 @@
 body {
-  background: url("https://d1a3f4spazzrp4.cloudfront.net/web-fresh/about-heros/about-hero-1-1440-900.jpg") no-repeat;
+  background: #333 url("https://d1a3f4spazzrp4.cloudfront.net/web-fresh/about-heros/about-hero-1-1440-900.jpg") no-repeat;
   margin: 0;
   color: white;
   font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
@@ -34,6 +34,10 @@ body {
 .btn:hover {
   color: white;
   background-color: #ff3660; 
+}
+
+.smaller {
+  margin-top: 6px;
 }
 
 .signup {
@@ -275,5 +279,20 @@ input[type=submit]{
     font-family: "brandon-grotesque", sans-serif;
 
 }
+
+.user-form {
+    max-width: 80%;
+    color: white;
+    margin: 40px auto;
+    padding: 60px;
+    background: rgba(10,10,10,.8);
+    padding-bottom: 100px;
+}
+
+
+/*.field {
+  font-size: 20px;
+  text-align: center;
+}*/
 
 
