@@ -15,6 +15,16 @@ class User < ActiveRecord::Base
 
   before_create :set_default_role
 
+  def feedback
+    DriverFeedback.joins(:target).where(drivers: { user_id: id } ) +
+    PassengerFeedback.joins(:target).where(passengers: { user_id: id } )
+  end
+
+  def feedback_ratings_average
+    rating_sum = feedback.inject(0) {|sum, feedback| sum + feedback.rating.to_f}
+    (rating_sum/feedback.count).round(2)
+  end
+
   def set_default_role
     self.role = "user" unless role
   end 

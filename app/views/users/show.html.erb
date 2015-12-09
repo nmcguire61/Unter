@@ -1,22 +1,22 @@
-
+<div class="journeys">
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
 <p>
   <strong>Rating:</strong>
-  <%= @user.rating_avg %>
+  <%= @user.feedback_ratings_average %>
 </p>
 <p>
   <strong>Car:</strong>
   <%= @user.car.try :brand %>
   <br>
   <% if correct_user?(@user) %>
-    <% if @user.car != nil  %>
-      <%= link_to "Edit car details", edit_car_path, :class => 'btn smaller' %>
-    <% else %>
-      <%= link_to "Add a car here", new_car_path, :class => 'btn smaller' %>
-    <% end %>
+  <% if @user.car != nil  %>
+  <%= link_to "Edit car details", edit_car_path, :class => 'btn smaller' %>
+  <% else %>
+  <%= link_to "Add a car here", new_car_path, :class => 'btn smaller' %>
+  <% end %>
   <% end %>
 </p>
 <p>
@@ -24,9 +24,18 @@
   <%= @user.description %>
 </p>
 
+<% @user.feedback.each do |feedback| %>
+<%= feedback.comment %><br>
+<% end  %>
 
 
 
-
+<% if current_user.id = @user.id %>
+List my finished journeys/Leave feedback
+<% @user.journeys.each do |journey| %>
+<li><%= link_to "#{journey.starting_point} - #{journey.ending_point}", journey %></li>
+<% end %>
+<% end %>
 
 <%= link_to 'Back', users_path %>
+</div>

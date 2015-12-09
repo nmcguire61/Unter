@@ -16,8 +16,7 @@ class FeedbacksController < ApplicationController
       raise "arrrrggg!"
     end
     @feedback.target_id = params[:id]
-    @feedback.user = current_user
-
+    @feedback.user_id = current_user.id
     respond_to do |format|
       if @feedback.save
         format.html { redirect_to @feedback.journey, notice: 'Feedback was successfully created.' }
