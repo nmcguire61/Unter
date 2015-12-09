@@ -5,7 +5,11 @@
 </p>
 <p>
   <strong>Rating:</strong>
+  <% if @user.feedback.count >= 5  %>
   <%= @user.feedback_ratings_average %>
+  <% else %>
+    <%= "The user does not have enough ratings yet"  %>
+  <% end %>
 </p>
 <p>
   <strong>Car:</strong>
