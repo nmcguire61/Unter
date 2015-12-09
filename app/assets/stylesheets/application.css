@@ -7,7 +7,7 @@ body {
 .block-white {
   background: white;
   height: 600px;
-  margin-top: 80px
+  margin-top: 0px;
 }
 .logo {
   margin: 0 0 0 20px;
@@ -104,7 +104,7 @@ h3 {
 .icon_wrapper {
   max-width: 80%;
   color: white;
-  margin: 0px auto;
+  margin: 50px auto;
   padding: 40px;
   background: rgba(10,10,10,.8);
 }
@@ -208,7 +208,6 @@ h3 {
 /*FOOTER*/
 .footer { 
     background-color: #6b9297;
-    margin-top: 50px;
     height: 80px;
     opacity: 0.9;
     position: relative;
@@ -259,6 +258,7 @@ input[type=submit]{
 }
 .map_img {
   width: 100%;
+  margin-top: 0;
 }
 .google-map {
   
