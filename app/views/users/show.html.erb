@@ -9,7 +9,7 @@
 </p>
 <p>
   <strong>Car:</strong>
-  <%= @user.car.brand %>
+  <%= @user.car.try :brand %>
   <br>
   <% if correct_user?(@user) %>
     <% if @user.car != nil  %>
