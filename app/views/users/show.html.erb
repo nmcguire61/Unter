@@ -35,10 +35,12 @@
 
 
 <% if current_user.id = @user.id %>
-List my finished journeys/Leave feedback
-<% @user.journeys.each do |journey| %>
-<li><%= link_to "#{journey.starting_point} - #{journey.ending_point}", journey %></li>
-<% end %>
+  Leave feedback on a journey:
+  <% @user.journeys.each do |journey| %>
+    <% if journey.starting_time < Time.now %>
+      <li><%= link_to "#{journey.starting_point} - #{journey.ending_point}", journey %></li>
+    <% end %>
+  <% end %>
 <% end %>
 
 <%= link_to 'Back', users_path %>

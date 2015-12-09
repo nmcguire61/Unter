@@ -6,13 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
+Cars.delete_all
+Journey.delete_all
+Passengers.delete_all
+Drivers.delete_all
 
 
 u1 = User.create!( name: "adminAdam", email:"admin@unter.com", password: "password", role: "admin", rating_avg: 12345, description: "I love to play 'adminton!")
 u2 = User.create!( name: "userEwan", email: "user@unter.com", password: "password", role: "user", rating_avg: 12345, description: "Hey guys, I like to travel a lot, lets save monies on gas price. Whoo! (Neil)")
 u3 = User.create!( name: "Babs", email: "battleaxebetty@internets.example", password: "password", role: "user", rating_avg: 12345, description: "Scream if you want to go faster!")
 u4 = User.create!( name: "Gerald", email: "gerrygerrysweetcaroline@internets.example", password: "password", role: "user", rating_avg: 12345, description: "Show me the money!")
-u5 = User.create!( name: "Harold", email: "harollingthunder@internets.example", password: "password", role: "user", rating_avg: 12345, description: "They see me rollin. They hatin. Its cos I'm white and nerdy.")
+u5 = User.create!( name: "Harold", email: "harollingthunder@internets.example", password: "password", role: "user", rating_avg: 12345, description: "They see me rollin. They hatin. Is it cos I'm white and nerdy.")
 u6 = User.create!( name: "Margret", email: "magstheminx@internets.example", password: "password", role: "user", rating_avg: 12345, description: "Just call me mustang mags!")
 
 c1 = Car.create!( brand:"VW", seats:"4", user_id:u2.id)
