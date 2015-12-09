@@ -183,6 +183,7 @@ h3 {
   display: inline-block;
   padding: 8px 8px;
   font-size: 15px;
+  border-radius: 3px;
 }
 
 .nav a:hover {
@@ -227,6 +228,7 @@ h3 {
 }
 /*END FOOTER*/
 
+/*NEW JOURNEY PAGE*/
 html, body {
   height: 100%;
   margin: 0;
@@ -269,6 +271,9 @@ input[type=submit]{
 }
 .map-form {
 }
+/*END OF NEW JOURNEY PAGE*/
+
+
 .form-price {
     max-width: 80%;
     color: white;
@@ -280,6 +285,14 @@ input[type=submit]{
 
 }
 
+<<<<<<< Updated upstream
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
 .user-form {
     max-width: 80%;
     color: white;
@@ -289,10 +302,130 @@ input[type=submit]{
     padding-bottom: 100px;
 }
 
-
 /*.field {
   font-size: 20px;
   text-align: center;
 }*/
+=======
+/*INTERACTIVE MAP*/
+
+.amcharts-map-line {
+    stroke-dasharray: 2px 2px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    -webkit-animation: am-moving-dashes 3s linear infinite;
+    animation: am-moving-dashes 3s linear infinite;
+}
+
+@-webkit-keyframes am-moving-dashes {
+    100% {
+        stroke-dashoffset: -30px;
+    }
+}
+@keyframes am-moving-dashes {
+    100% {
+        stroke-dashoffset: -30px;
+    }
+}
+
+
+.amcharts-map-image-london {
+    -webkit-animation: am-pulsating 1s ease-out infinite;
+    animation: am-pulsating 1s ease-out infinite;
+}
+@-webkit-keyframes am-pulsating {
+    0% {
+        transform: scale(0);
+        opacity:1;
+    }
+    100% {
+        transform: scale(4);
+        opacity:0;
+    }
+}
+@keyframes am-pulsating {
+    0% {
+        transform: scale(0);
+        opacity:1;
+    }
+    100% {
+        transform: scale(4);
+        opacity:0;
+    }
+}
+
+
+.amcharts-map-area {
+    -webkit-transition: all .3s .3s ease-out;
+    transition: all .3s .3s ease-out;
+}
+.amcharts-map-area:hover {
+    fill: #93c765;
+    stroke: #93c765;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+/*END OF INTERACTIVE MAP*/
+
+/*SIGN UP BOX*/
+.sign_up_page {
+  max-width: 30%;
+  color: white;
+  margin: 30px auto;
+  padding: 60px;
+  background: rgba(10,10,10,.8);
+  padding-bottom: 100px;
+  text-align: center;
+}
+.sign_up_page .field:hover {
+  color: #ff3660;
+}
+.sign_up_page h1{
+  color: white;
+
+}
+/*END OF SIGN UP BOX*/
+
+/*EDIT PROFILE BOX*/
+.edit_profile {
+  max-width: 30%;
+  color: white;
+  margin: 30px auto;
+  padding: 60px;
+  background: rgba(10,10,10,.8);
+  padding-bottom: 100px;
+  text-align: center;
+}
+.edit_profile btn {
+
+}
+.edit_profile .field:hover {
+  color: #ff3660;
+}
+.edit_profile h1 {
+  color: white;
+}
+/*END OF EDIT PROFILE BOX*/
+
+/*LOGIN BOX*/
+.login_box {
+  max-width: 25%;
+  color: white;
+  margin: 30px auto;
+  padding: 60px;
+  background: rgba(10,10,10,.8);
+  padding-bottom: 100px;
+  text-align: center;
+}
+.login_box .field:hover {
+  color: #ff3660;
+}
+
+
+
+
+
+>>>>>>> Stashed changes
 
 

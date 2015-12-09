@@ -5,6 +5,12 @@ gem 'carrierwave'
 gem 'mailboxer'
 gem 'cancancan'
 gem 'compass', '~> 1.0', '>= 1.0.3'
+gem 'will_paginate'
+gem 'jquery-turbolinks'
+gem 'rails4-autocomplete'
+gem "jquery-ui-rails"
+
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
