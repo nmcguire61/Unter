@@ -31,7 +31,8 @@ body {
   padding: 8px;
 }
 
-.btn:hover {
+.btn:hover, 
+.btn-reverse {
   color: white;
   background-color: #ff3660; 
 }
@@ -59,7 +60,7 @@ body {
   padding: 8px;
 }
 .home-page {
-  margin-top: 50px;
+  margin-top: 100px;
   color: white;
   text-align: center;
 }
@@ -155,6 +156,10 @@ h3 {
 .account a {
   font-weight: 100;
 }
+.envelope {
+  max-width: 50%;
+  margin-right: 150px;
+}
 
 /*END HOME PAGE*/
 
@@ -199,17 +204,53 @@ h3 {
 .journeys {
   max-width: 80%;
   color: white;
-  margin: 40px auto;
+  margin: 100px auto;
   padding: 60px;
+  text-align: center;
   background: rgba(10,10,10,.8);
   font-family: "brandon-grotesque", sans-serif;
+}
+.journeys h1 {
+  text-align: center;
+  font-weight:200;
+  color: white;
+  margin-bottom: 50px;
+}
+.journeys table {
+  margin-bottom: 40px;  
+}
+a.btn {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
 }
 
 .wrapper {
   min-height: 100%;
   position: relative;
 }
+th {
+  padding: 10px;
+}
+td {
+  padding: 10px;
+  border: 1px solid color: #ff3660;
+  padding: 15px;
+}
+table { 
+  border-collapse: collapse;
+  width: 100%;
+}
 
+tr {
+  border: 1px solid white;
+  border-right: 0;
+  border-left: 0;
+}
+tr:hover {
+  background-color: #c9cbc8;
+  background-color: rgba(255, 255, 255, 0.4);
+}
 /*FOOTER*/
 .footer { 
     background-color: #6b9297;
@@ -227,6 +268,7 @@ h3 {
   margin: 10px 10px;
 }
 /*END FOOTER*/
+
 
 /*NEW JOURNEY PAGE*/
 html, body {
@@ -254,11 +296,12 @@ input[type=submit]{
 .new-journey {
     max-width: 80%;
     color: white;
-    margin: 40px auto;
+    margin: 100px auto;
     padding: 60px;
     background: rgba(10,10,10,.8);
     padding-bottom: 100px;
 }
+
 .new-journey .flex {
   justify-content: space-between;
 }
@@ -285,13 +328,6 @@ input[type=submit]{
 
 }
 
-<<<<<<< Updated upstream
-.messages {
-  max-height: 400px;
-  overflow-y: auto;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
 
 .user-form {
     max-width: 80%;
@@ -300,70 +336,6 @@ input[type=submit]{
     padding: 60px;
     background: rgba(10,10,10,.8);
     padding-bottom: 100px;
-}
-
-/*.field {
-  font-size: 20px;
-  text-align: center;
-}*/
-=======
-/*INTERACTIVE MAP*/
-
-.amcharts-map-line {
-    stroke-dasharray: 2px 2px;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    -webkit-animation: am-moving-dashes 3s linear infinite;
-    animation: am-moving-dashes 3s linear infinite;
-}
-
-@-webkit-keyframes am-moving-dashes {
-    100% {
-        stroke-dashoffset: -30px;
-    }
-}
-@keyframes am-moving-dashes {
-    100% {
-        stroke-dashoffset: -30px;
-    }
-}
-
-
-.amcharts-map-image-london {
-    -webkit-animation: am-pulsating 1s ease-out infinite;
-    animation: am-pulsating 1s ease-out infinite;
-}
-@-webkit-keyframes am-pulsating {
-    0% {
-        transform: scale(0);
-        opacity:1;
-    }
-    100% {
-        transform: scale(4);
-        opacity:0;
-    }
-}
-@keyframes am-pulsating {
-    0% {
-        transform: scale(0);
-        opacity:1;
-    }
-    100% {
-        transform: scale(4);
-        opacity:0;
-    }
-}
-
-
-.amcharts-map-area {
-    -webkit-transition: all .3s .3s ease-out;
-    transition: all .3s .3s ease-out;
-}
-.amcharts-map-area:hover {
-    fill: #93c765;
-    stroke: #93c765;
-    -webkit-transition: all .3s ease-out;
-    transition: all .3s ease-out;
 }
 
 /*END OF INTERACTIVE MAP*/
@@ -391,10 +363,12 @@ input[type=submit]{
 .edit_profile {
   max-width: 30%;
   color: white;
-  margin: 30px auto;
-  padding: 60px;
+  margin: 100px auto;
+  padding: 40px;
+  padding-top: 20px;
+  margin-bottom: 20px;
   background: rgba(10,10,10,.8);
-  padding-bottom: 100px;
+  padding-bottom: 80px;
   text-align: center;
 }
 .edit_profile btn {
@@ -421,11 +395,76 @@ input[type=submit]{
 .login_box .field:hover {
   color: #ff3660;
 }
+/*END OF LOGIN BOX*/
+
+/*MESSAGES BOX*/
+.messages {
+  max-width: 30%;
+  color: white;
+  margin: 100px auto;
+  padding: 60px;
+  background: rgba(10,10,10,.8);
+  padding-bottom: 43px;
+  text-align: center;
+
+}
+/*.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}*/
+.form-control {
+  /*width: 90px;*/
+  width: 190px;
+}
+
+.subject-box {
+  width: 90px;
+}
+.recipient-box {
+  max-width: 80px;
+  max-height: 30px;
+}
+input[type=submit] {
+  /*width:60px;*/
+}
+label:hover {
+color:  #ff3660;
+}
+
+/*FIXED HEADER*/
+.header.header.flex {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 9999;
+    margin-bottom: 90px;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+.f-nav nav {
+    border-bottom: 1px solid #e0e0e0;
+    -webkit-box-shadow: 0 2px 12px #efefef;
+    -moz-box-shadow: 0 2px 12px #efefef;
+    box-shadow: 0 2px 12px #efefef;
+}
+/*END OF FIXED HEADER*/
 
 
+/*CONVERSETION-PAGE*/
+    .mailbox {
+      max-width: 80%;
+      color: white;
+      margin: 100px auto;
+      padding: 60px;
+      background: rgba(10,10,10,.8);
+      font-family: "brandon-grotesque", sans-serif;
+    }
 
 
-
->>>>>>> Stashed changes
-
-
+    
