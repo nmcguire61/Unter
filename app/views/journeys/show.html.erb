@@ -55,6 +55,29 @@
 
   <%# @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "Journey is closed")} %>
 
+<% if @journey.driver.id == current_user.id  %>
+<%= link_to "Close journey", journey_close_path(@journey), :method => 'post' %>
+<% end %>
+
+<% if @journey.status = 'closed' %>
+<% @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "Journey is closed")} %>
+<% elsif @journey.status = 'finished' %>
+<% @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "The journey is finished, please leave a feedback on your fellow Unter-users!")} %>
+<% end %>
+
+<% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} %>
+<%= link_to "#{@journey.driver.user.name}", new_feedback_index_path("driver", @journey.driver.id) %>
+<% end %>
+
+
+<% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} || @journey.driver.user.id == current_user.id %>
+<% @journey.passengers.each do |p| %>
+<%= link_to "#{p.user.name}", new_feedback_index_path("passenger", p.id) %>
+<% end %>
+<% end %>
+
+<%= @journey.sum_passenger_price %>
+
 
 
   <%= link_to 'Back', journeys_path, :class=> "back" %>

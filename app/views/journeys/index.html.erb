@@ -16,23 +16,26 @@
     </thead>
     <tbody>
       <% @journeys.each do |journey| %>
-      <tr>
+        <% if journey.starting_time >= Time.now %>
+          <tr>
 
-       <td><%= journey.starting_point %></td>
-       <td><%= journey.ending_point %></td>
-       <td><%= journey.human_readable_time %></td>
-       <td><%= journey.user.name %></td>
-       <td><%= journey.status %></td>
+           <td><%= journey.starting_point %></td>
+           <td><%= journey.ending_point %></td>
+           <td><%= journey.human_readable_time %></td>
+           <td><%= journey.user.name %></td>
+           <td><%= journey.status %></td>
 
-       <div class="show_buttons">
-        <td><%= link_to 'Show', journey, :class=> "btn btn-reverse" %></td>
-        <td><%= link_to 'Edit', edit_journey_path(journey), :class=> "btn btn-reverse" %></td>
-        <% if current_user.role == 'admin'%>
-        <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </div>
-    </tr>
+           <div class="show_buttons">
+            <td><%= link_to 'Show', journey, :class=> "btn btn-reverse" %></td>
+            <td><%= link_to 'Edit', edit_journey_path(journey), :class=> "btn btn-reverse" %></td>
+            <% if current_user.role == 'admin'%>
+            <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+        </div>
+      </tr>
     <% end %>
+  <% end %>
+
 
   </tbody>
 </table>

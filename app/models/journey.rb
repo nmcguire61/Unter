@@ -3,6 +3,7 @@ class Journey < ActiveRecord::Base
   has_one :driver
   has_one :car, through: :driver
   has_many :passengers
+
   acts_as_messageable
 
 
@@ -19,6 +20,12 @@ def full?
    self.passengers.to_a.count{|p| p.status == "Accepted"} == self.car.seats 
 end
 
+def sum_passenger_price
+  self.passengers.inject(0) {|sum, passenger| sum + passenger.price.to_f}
+  #rating_sum = feedback.inject(0) {|sum, feedback| sum + feedback.rating.to_f}
+
+end
+
 
 def mailboxer_email(object)
 
@@ -27,6 +34,6 @@ def mailboxer_email(object)
     else
       email
     end
- end
+end
 
 end

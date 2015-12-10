@@ -7,7 +7,6 @@ class JourneysController < ApplicationController
   end
 
   def show
-    
   end
 
   def new
@@ -53,6 +52,13 @@ class JourneysController < ApplicationController
       format.html { redirect_to journeys_url, notice: 'Journey was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def close
+    @journey = Journey.find(params[:journey_id])
+    @journey.status = "closed"
+    @journey.save
+    redirect_to @journey
   end
 
   private

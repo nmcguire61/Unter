@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing PaymentTransactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Seats</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payment_transactions.each do |payment_transaction| %>
+      <tr>
+        <td><%= payment_transaction.journey_id %></td>
+        <td><%= payment_transaction.journey_cost %></td>
+        <td><%= payment_transaction.profit %></td>
+        <td><%= link_to 'Show', payment_transaction %></td>
+        <td><%= link_to 'Edit', edit_payment_transaction_path(payment_transaction) %></td>
+        <td><%= link_to 'Destroy', payment_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New PaymentTransaction', new_payment_transaction_path %>
