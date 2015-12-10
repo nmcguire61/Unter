@@ -1,4 +1,5 @@
 <div class="journeys">
+
 <div class="show trip">
   <table>
     <thead>
@@ -26,25 +27,25 @@
     </thead>
   </table>
 
-<div class="passenger_approval">
-<h2>Passengers:</h2>
-  <% @journey.passengers.each do |p| %>
-  <% status = p.status %>
-  <% if status == 'Accepted' %>
-  <%= p.user.name %> is accepted!
-  <% elsif status == 'Rejected' %>
-  <%= p.user.name %> is rejected!
-  <% else %>
-  <% if @journey.driver.user_id == current_user.id %>
-  <div ="passenger_list"><%= p.user.name %> - <%= p.price %> - <%= p.status %> <%= button_to "Accept", journey_passenger_accept_path(@journey, p), :class => "btn" %> <%= button_to "Reject", journey_passenger_reject_path(@journey, p), :class => "btn" %></div>
-  <% else %>
-  <div class="passenger_list"><li><%= p.user.name %> - <%= p.price %> - <%= p.status %></li></div>
-  <% end %>
-  <% end %>
-  <% end %>
+  <div class="passenger_approval">
+    <h2>Passengers:</h2>
+    <% @journey.passengers.each do |p| %>
+    <% status = p.status %>
+    <% if status == 'Accepted' %>
+    <%= p.user.name %> is accepted!
+    <% elsif status == 'Rejected' %>
+    <%= p.user.name %> is rejected!
+    <% else %>
+    <% if @journey.driver.user_id == current_user.id %>
+    <div ="passenger_list"><%= p.user.name %> - <%= p.price %> - <%= p.status %> <%= button_to "Accept", journey_passenger_accept_path(@journey, p), :class => "btn" %> <%= button_to "Reject", journey_passenger_reject_path(@journey, p), :class => "btn" %>
+    </div>
+    <% else %>
 
-
-</div>
+    <div class="passenger_list"><li><%= p.user.name %> - <%= p.price %> - <%= p.status %></li></div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
   <% if @journey.full?  %>
   The journey is full!
   <% else %>
@@ -95,12 +96,5 @@
     <% end %>
   <% end %>
 <% end %>
-
-
-
-
-
-
-
 </div>
 

@@ -11,7 +11,7 @@
 
 <p>
   <strong>Rating:</strong>
-  <% if @user.feedback.count >= 5  %>
+  <% if @user.feedback.count >= 3  %>
   <%= @user.feedback_ratings_average %>
   <% else %>
     <%= "The user does not have enough ratings yet"  %>
