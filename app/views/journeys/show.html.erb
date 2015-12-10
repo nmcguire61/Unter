@@ -56,7 +56,7 @@
 
   <%# @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "Journey is closed")} %>
 
-<% if @journey.driver.id == current_user.id  %>
+<% if @journey.driver.user.id == current_user.id  %>
 <%= link_to "Close journey", journey_close_path(@journey), :method => 'post' %>
 <% end %>
 
@@ -64,6 +64,7 @@
 <% @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "Journey is closed")} %>
 <% elsif @journey.status = 'finished' %>
 <% @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "The journey is finished, please leave a feedback on your fellow Unter-users!")} %>
+
 <% end %>
 
 <% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} %>
@@ -77,7 +78,9 @@
 <% end %>
 <% end %>
 
+
 <% @journey.sum_passenger_price %>
+
 
 
 

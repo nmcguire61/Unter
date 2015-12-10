@@ -3,6 +3,7 @@ class Journey < ActiveRecord::Base
   has_one :driver
   has_one :car, through: :driver
   has_many :passengers
+  has_one :payment_transaction
 
   acts_as_messageable
 
