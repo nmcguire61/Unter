@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'ajax/users'
 
   get 'home/index'
-  resources :payment_transactions
+
+ 
 
   resources :journeys do
       post 'close'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
       post 'reject'
     end
     resources :drivers
+    resources :payment_transactions
   end
   
   resources :feedback, only: [] do
