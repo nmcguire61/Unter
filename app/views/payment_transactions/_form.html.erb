@@ -1,4 +1,4 @@
-<%= form_for(@payment_transaction) do |f| %>
+<%= form_for([@journey, @payment_transaction]) do |f| %>
   <% if @payment_transaction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@payment_transaction.errors.count, "error") %> prohibited this payment_transaction from being saved:</h2>
@@ -11,20 +11,14 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :journey_id %><br>
-    <%= f.text_field :journey_id, :required => true %>
-  </div>
-  <div class="field">
-    <%= f.label :journey_cost %><br>
-    <%= f.number_field :journey_cost, :required => true %>
-  </div>
-  <div class="field">
-    <%= f.label :profit %><br>
-    <%= f.number_field :profit, :required => true %>
+    <%= @payment_transaction.journey_cost %><br>
+    <%= "Please confirm that the following journey is ready to be monetized: "%> <br>
+    <%= "#{@payment_transaction.journey.starting_point} - #{@payment_transaction.journey.ending_point}, #{@payment_transaction.journey.starting_time}" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Confirm", :class => "btn" %>
   </div>
 <% end %>
