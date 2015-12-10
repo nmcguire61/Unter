@@ -89,12 +89,10 @@
 <%= link_to "Please leave a feedback about #{@journey.driver.user.name}", new_feedback_index_path("driver", @journey.driver.id) %>
 <% end %>
 
-<% if @journey.status == 'finished' %>
   <% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} || @journey.driver.user.id == current_user.id%>
     <% @journey.passengers.each do |p| %>
     <%= link_to "Please leave a feedback about #{p.user.name}", new_feedback_index_path("passenger", p.id), :class => "btn" %>
     <% end %>
   <% end %>
-<% end %>
 </div>
 
