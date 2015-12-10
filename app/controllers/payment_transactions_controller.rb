@@ -19,10 +19,11 @@ class PaymentTransactionsController < ApplicationController
   end
 
   def create
-    @payment_transaction = PaymentTransaction.new(payment_transaction_params)
+    @payment_transaction = PaymentTransaction.new()
     @journey = Journey.find(params[:journey_id])
     @payment_transaction.journey = @journey
       @payment_transaction.journey_cost = @payment_transaction.journey.passengers.inject(0) {|sum, passenger| sum + passenger.price.to_f}
+    @payment_transaction.profit = @payment_transaction.journey_cost * 0.10  
   respond_to do |format|
     if @payment_transaction.save
       format.html { redirect_to @journey, notice: 'PaymentTransaction was successfully created.' }
@@ -32,7 +33,7 @@ class PaymentTransactionsController < ApplicationController
       format.json { render json: @payment_transaction.errors, status: :unprocessable_entity }
     end
   end
-end
+  end
 
 def update
   respond_to do |format|

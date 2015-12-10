@@ -13,15 +13,12 @@
 
 
   <div class="field">
-    <%= f.label :journey_cost %><br>
-    <%= f.number_field :journey_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :profit %><br>
-    <%= f.number_field :profit%>
+    <%= @payment_transaction.journey_cost %><br>
+    <%= "Please confirm that the following journey is ready to be monetized: "%> <br>
+    <%= "#{@payment_transaction.journey.starting_point} - #{@payment_transaction.journey.ending_point}, #{@payment_transaction.journey.starting_time}" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Confirm", :class => "btn" %>
   </div>
 <% end %>

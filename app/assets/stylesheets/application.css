@@ -102,6 +102,12 @@ h3 {
   margin: 20px;
   
 }
+
+.passenger_list {
+  display: inline; 
+
+}
+
 .search_icon {
   max-width: 20%;
   display: inline-block; 
