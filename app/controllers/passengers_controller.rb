@@ -20,18 +20,18 @@ class PassengersController < ApplicationController
 
   def create
     @journey = Journey.find(params[:journey_id])
-    @passenger = @journey.passengers.new(passenger_params)
-    @passenger.user = current_user
-    @passenger.status = "pending"
-    respond_to do |format|
-      if @passenger.save
-        format.html { redirect_to @passenger.journey, notice: 'Passenger was successfully created.' }
-        format.json { render :show, status: :created, location: @passenger }
-      else
-        format.html { render :new }
-        format.json { render json: @passenger.errors, status: :unprocessable_entity }
-      end
-    end
+        @passenger = @journey.passengers.new(passenger_params)
+        @passenger.user = current_user
+        @passenger.status = "pending"
+        respond_to do |format|
+          if @passenger.save
+            format.html { redirect_to @passenger.journey, notice: 'Passenger was successfully created.' }
+            format.json { render :show, status: :created, location: @passenger }
+          else
+            format.html { render :new }
+            format.json { render json: @passenger.errors, status: :unprocessable_entity }
+          end
+        end
   end
 
   def update
