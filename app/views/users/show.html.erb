@@ -3,6 +3,12 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
+<% if current_user.role == 'admin' %>
+ <%= link_to "Transactions", journey_payment_transactions_path(1), :class => 'btn smaller' %>
+<% end %>
+
+
+
 <p>
   <strong>Rating:</strong>
   <% if @user.feedback.count >= 5  %>
@@ -32,7 +38,10 @@
 <%= feedback.comment %><br>
 <% end  %>
 
-
+<% finished_journeys = Journey.where(status: "finished") %>
+<% finished_journeys.each do |journey| %>
+<%= link_to "#{journey.starting_point} - #{journey.ending_point}", journey%>
+<% end %>
 
 <% if current_user.id = @user.id %>
   Leave feedback on a journey:

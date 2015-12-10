@@ -9,7 +9,11 @@
   <div>
     <h3><%= link_to "Offer a lift", new_journey_path  %></h3>
     <p>Share a lift as a driver. Add your trip or daily commute and start sharing the costs</p>
+    <% if user_signed_in? && current_user.car.present? %>
     <%= link_to raw(image_tag("cargreen.png", :alt => "car", :class=> "car_icon")), new_journey_path %>
+    <% else %>
+    <%=link_to raw(image_tag("cargreen.png", :alt => "car", :class=> "car_icon")), new_car_path(current_user) %>
+    <% end %>
   </div>
   <div>
 

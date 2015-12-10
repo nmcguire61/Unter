@@ -22,7 +22,7 @@
         <% if current_user.car.present? %>
         <li><%=link_to 'Offer a Lift', new_journey_path, :class => 'btn' %></li>
         <% else %>
-        <li>Please register a car to create journeys!</li>
+        <li><%=link_to 'Offer a Lift', new_car_path(current_user), :class => 'btn' %></li>
         <% end %>
         <li><%=link_to 'Find a lift', journeys_path,  :class => 'btn' %></li>
        
@@ -54,6 +54,11 @@
      <% end %> 
     </header>
     </div>
+    <br>
+    <br>
+
+    <br>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> 
 
