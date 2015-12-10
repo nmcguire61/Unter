@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
-Cars.delete_all
+Car.delete_all
 Journey.delete_all
-Passengers.delete_all
-Drivers.delete_all
+Passenger.delete_all
+Driver.delete_all
 
 
 u1 = User.create!( name: "adminAdam", email:"admin@unter.com", password: "password", role: "admin", rating_avg: 12345, description: "I love to play 'adminton!")

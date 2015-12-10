@@ -1,4 +1,5 @@
 <div class="journeys">
+<div class="show trip">
   <table>
     <thead>
       <tbody>
@@ -24,6 +25,7 @@
       </tbody>
     </thead>
   </table>
+  </div>
 
   <% @journey.passengers.each do |p| %>
   <% status = p.status %>
@@ -83,3 +85,4 @@
   <%= link_to 'Back', journeys_path, :class=> "back" %>
 
 </div>
+
