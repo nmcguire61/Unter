@@ -1,105 +1,99 @@
 <div class="journeys">
 
-<div class="show trip">
-  <table>
-    <thead>
-      <tbody>
-        <tr>
-          <th>From:</th>
-          <th>To:</th>
-          <th>Travel Date/Time:</th>
-          <th>Driver:</th>
-          <th>Car:</strong></th>
-          <th>Number of seats:</th>
-          <th>Status:</th>
-</tr>
-<tr>
-          <td><%= @journey.starting_point %></td>
-          <td><%= @journey.ending_point %></td>
-          <td><%= @journey.human_readable_time %></td>
-          <td><%= @journey.user.name %></td>
-          <td><%= @journey.car.brand %></td>
-          <td><%= @journey.car.seats %></td>
-          <td><%= @journey.status %></td>
+  <div class="show trip">
+    <table>
+      <thead>
+        <tbody>
+          <tr>
+            <th>From:</th>
+            <th>To:</th>
+            <th>Travel Date/Time:</th>
+            <th>Driver:</th>
+            <th>Car:</strong></th>
+            <th>Number of seats:</th>
+            <th>Status:</th>
+          </tr>
+          <tr>
+            <td><%= @journey.starting_point %></td>
+            <td><%= @journey.ending_point %></td>
+            <td><%= @journey.human_readable_time %></td>
+            <td><%= @journey.user.name %></td>
+            <td><%= @journey.car.brand %></td>
+            <td><%= @journey.car.seats %></td>
+            <td><%= @journey.status %></td>
 
-        </tr>
-      </tbody>
-    </thead>
-  </table>
+          </tr>
+        </tbody>
+      </thead>
+    </table>
 
-  <div class="passenger_approval">
-    <h2>Passengers:</h2>
-    <% @journey.passengers.each do |p| %>
-    <% status = p.status %>
-    <% if status == 'Accepted' %>
-    <%= p.user.name %> is accepted!
-    <% elsif status == 'Rejected' %>
-    <%= p.user.name %> is rejected!
-    <% else %>
-    <% if @journey.driver.user_id == current_user.id %>
-    <div ="passenger_list"><%= p.user.name %> - <%= p.price %> - <%= p.status %> <%= button_to "Accept", journey_passenger_accept_path(@journey, p), :class => "btn" %> <%= button_to "Reject", journey_passenger_reject_path(@journey, p), :class => "btn" %>
+    <div class="passenger_approval">
+      <h2>Passengers:</h2>
+      <% @journey.passengers.each do |p| %>
+      <% status = p.status %>
+      <% if status == 'Accepted' %>
+      <%= p.user.name %> is accepted!
+      <% elsif status == 'Rejected' %>
+      <%= p.user.name %> is rejected!
+      <% else %>
+      <% if @journey.driver.user_id == current_user.id %>
+      <div ="passenger_list"><%= p.user.name %> - <%= p.price %> - <%= p.status %> <%= button_to "Accept", journey_passenger_accept_path(@journey, p), :class => "btn" %> <%= button_to "Reject", journey_passenger_reject_path(@journey, p), :class => "btn" %>
+      </div>
+      <% else %>
+
+      <div class="passenger_list"><li><%= p.user.name %> - <%= p.price %> - <%= p.status %></li></div>
+      <% end %>
+      <% end %>
+      <% end %>
     </div>
+    <% if @journey.full?  %>
+    The journey is full!
     <% else %>
-
-    <div class="passenger_list"><li><%= p.user.name %> - <%= p.price %> - <%= p.status %></li></div>
+    <% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} %>
+    <br>
+    <strong>You already joined this journey!</strong>
+    <% elsif @journey.driver.user == current_user %>
+    <strong>You are the driver, muppet!</strong>
+    <% else %>
+    <%= link_to "Join as a passenger", new_journey_passenger_path(@journey), :class=> "btn btn-reverse" %>
     <% end %>
     <% end %>
+    <br>
+    <br>
+    <%= link_to 'Back', journeys_path, :class => "btn" %>
+
+
+    <% if @journey.driver.user.id == current_user.id  %>
+    <% if @journey.status == 'open' %>
+    <%= link_to "Close journey", journey_close_path(@journey), :method => 'post', :class => "btn" %>
+    <% elsif @journey.status == 'closed' %>
+    <%= link_to "Open journey", journey_open_path(@journey), :method => 'post', :class => "btn" %>
     <% end %>
-  </div>
-  <% if @journey.full?  %>
-  The journey is full!
-  <% else %>
-  <% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} %>
-  <br>
-  <strong>You already joined this journey!</strong>
-  <% elsif @journey.driver.user == current_user %>
-  <strong>You are the driver, muppet!</strong>
-  <% else %>
-  <%= link_to "Join as a passenger", new_journey_passenger_path(@journey), :class=> "btn btn-reverse" %>
-  <% end %>
-  <% end %>
-  <br>
-  <br>
-  <%= link_to 'Back', journeys_path, :class => "btn" %>
-
-  <%# @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "Journey is closed")} %>
-
-<% if @journey.driver.user.id == current_user.id  %>
-<% if @journey.status == 'open' %>
-<%= link_to "Close journey", journey_close_path(@journey), :method => 'post', :class => "btn" %>
-<% elsif @journey.status == 'closed' %>
-<%= link_to "Open journey", journey_open_path(@journey), :method => 'post', :class => "btn" %>
-<% end %>
-<% end %>
-
-<% if @journey.starting_time <= Time.now %> 
-  <% @journey.status = "finished" %>
-<% end %>
+    <% end %>
 
 
-<% if @journey.status = 'finished' && current_user.role == 'admin' %>
-<%= link_to "Approve", new_journey_payment_transaction_path(@journey), :class => "btn" %>
-<% end %>
+    <% if @journey.status = 'finished' && current_user.role == 'admin' %>
+    <%= link_to "Approve", new_journey_payment_transaction_path(@journey), :class => "btn" %>
+    <% end %>
 
 
-<% if @journey.status = 'closed' %>
-<% @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "Journey is closed")} %>
-<% elsif @journey.status = 'finished' %>
-<% @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "The journey is finished, please leave a feedback on your fellow Unter-users!")} %>
+    <% if @journey.status = 'closed' %>
+    <% @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "Journey is closed")} %>
+    <% elsif @journey.status = 'finished' %>
+    <% @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "The journey is finished, please leave a feedback on your fellow Unter-users!")} %>
 
-<% end %>
+    <% end %>
 
-<% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} && @journey.status == 'finished'%>
-<%= link_to "Please leave a feedback about #{@journey.driver.user.name}", new_feedback_index_path("driver", @journey.driver.id) %>
-<% end %>
+    <% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} && @journey.status == 'finished'%>
+    <%= link_to "Please leave a feedback about #{@journey.driver.user.name}", new_feedback_index_path("driver", @journey.driver.id) %>
+    <% end %>
 
-  <% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} || @journey.driver.user.id == current_user.id%>
+    <% if @journey.passengers.any? {|p| p[:user_id] == current_user.id} || @journey.driver.user.id == current_user.id%>
     <% @journey.passengers.each do |p| %>
     <%= link_to "Please leave a feedback about #{p.user.name}", new_feedback_index_path("passenger", p.id), :class => "btn" %>
     <% end %>
-  <% end %>
+    <% end %>
 
-<% end %>
 
-</div>
+  </div>
 

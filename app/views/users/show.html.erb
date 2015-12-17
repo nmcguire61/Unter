@@ -3,9 +3,7 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
-<% if current_user.role == 'admin' %>
- <%= link_to "Transactions", journey_payment_transactions_path(1), :class => 'btn smaller' %>
-<% end %>
+
 
 
 
@@ -34,14 +32,19 @@
   <%= @user.description %>
 </p>
 
+<h2>Feedbacks:</h2>
 <% @user.feedback.each do |feedback| %>
-<%= feedback.comment %><br>
+Feedback: <%= feedback.comment %> Rating: <%= feedback.rating %> from: <%= feedback.user.name %><br>
 <% end  %>
+
+<h2>Finished journeys:</h2>
 
 <% finished_journeys = Journey.where(status: "finished") %>
 <% finished_journeys.each do |journey| %>
 <%= link_to "#{journey.starting_point} - #{journey.ending_point}", journey%>
 <% end %>
+
+<h2>Upcoming journeys:</h2>
 
 <% if current_user.id = @user.id %>
   Leave feedback on a journey:
