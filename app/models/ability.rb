@@ -21,7 +21,7 @@ class Ability
       # can :crud, Feedback, :user_id => user.id
       # can :crud, User, :user_id => user.id
     else
-      can :manage, :all
+      can :sign_in
       # can :read, Journey
       # can :sign_in
     end
