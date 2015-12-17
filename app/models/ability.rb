@@ -14,6 +14,8 @@ class Ability
       can :sign_in
       can :read, :all
       can :crud, Journey, :user_id => user.id
+      can :open, Journey, :user_id => user.id
+      can :close, Journey, :user_id => user.id
       can :crud, Car, :user_id => user.id
 
       # can :crud, Feedback, :user_id => user.id

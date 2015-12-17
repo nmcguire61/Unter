@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :journeys do
       post 'close'
+      post 'open'
     resources :passengers do
       post  'accept'
       post 'reject'

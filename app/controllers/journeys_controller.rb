@@ -61,6 +61,13 @@ class JourneysController < ApplicationController
     redirect_to @journey
   end
 
+  def open
+    @journey = Journey.find(params[:journey_id])
+    @journey.status = "open"
+    @journey.save
+    redirect_to @journey
+  end
+
   private
 
     def set_journey

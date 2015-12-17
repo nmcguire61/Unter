@@ -65,10 +65,14 @@
   <%# @journey.passengers.each { |p| @journey.send_message(p.user, "#{@journey.starting_point} - #{@journey.ending_point}", "Journey is closed")} %>
 
 <% if @journey.driver.user.id == current_user.id  %>
+<% if @journey.status == 'open' %>
 <%= link_to "Close journey", journey_close_path(@journey), :method => 'post', :class => "btn" %>
+<% elsif @journey.status == 'closed' %>
+<%= link_to "Open journey", journey_open_path(@journey), :method => 'post', :class => "btn" %>
+<% end %>
 <% end %>
 
-<% if @journey.starting_time >= Time.now %> 
+<% if @journey.starting_time <= Time.now %> 
   <% @journey.status = "finished" %>
 <% end %>
 
@@ -96,5 +100,6 @@
     <% end %>
   <% end %>
 <% end %>
+<%# raise %>
 </div>
 
