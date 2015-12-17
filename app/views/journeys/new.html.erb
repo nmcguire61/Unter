@@ -20,11 +20,11 @@
         <div class="flex">
           <div class="field">
             <%= f.label :starting_point %><br>
-            <%= f.text_field :starting_point , id: 'startPoint' %>
+            <%= f.text_field :starting_point , id: 'start', :value => "Edinburgh" %>
           </div>
           <div class="field">
             <%= f.label :ending_point %><br>
-            <%= f.text_field :ending_point , id: 'endPoint' %>
+            <%= f.text_field :ending_point , id: 'end', :value => "Glasgow" %>
           </div>
         </div>
         <div class="field">
@@ -39,7 +39,14 @@
       <div class="google-map">
         <div id="floating-panel">
 
-          <select id="start" onchange="calcRoute();">
+      <!--   <form id="route_start" >
+          Start:<input type="text" id="start" onchange="calcRoute();">
+          </form>
+          <form id="route_end" >
+          End: <input type="text" id="end" onchange="calcRoute();">
+        </form> -->
+
+  <!--         <select id="start" onchange="calcRoute();">
             <option value="london, gb">London</option>
             <option value="glasgow, uk">Glasgow</option>
             <option value="birmingham, uk">Birmingham</option>
@@ -55,9 +62,9 @@
             <option value="edinburgh, uk">Edinburgh</option>
             <option value="kirkcaldy, uk">Kirkcaldy</option>
             <option value="dundee, uk">Dundee</option>
-          </select>
+          </select> -->
 
-          <select id="end" onchange="calcRoute();">
+          <!-- <select id="end" onchange="calcRoute();">
             <option value="london, gb">London</option>
             <option value="glasgow, uk">Glasgow</option>
             <option value="birmingham, uk">Birmingham</option>
@@ -74,7 +81,7 @@
             <option value="kirkcaldy, uk">Kirkcaldy</option>
             <option value="dundee, uk">Dundee</option>
 
-          </select>
+          </select> -->
 
         </div>
         <div id="map"></div>
@@ -121,8 +128,8 @@
         var start = document.getElementById("start");
         var end = document.getElementById("end");
         
-        var startPoint = $("#start option:selected").text();
-        var endPoint = $("#end option:selected").text();
+        var startPoint = $("#start").text();
+        var endPoint = $("#end").text();
 
         console.log("Start: " + startPoint + " End: " + endPoint);
         $('#startPoint').val(startPoint);

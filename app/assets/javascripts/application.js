@@ -13,9 +13,22 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require messages
 //= require turbolinks
 //= require jquery-ui
 //= require_tree .
 //= require autocomplete-rails
 
+// $('#start').click(function(){
+//   if(this.value=="Edinburgh")this.value='';
+// });
+
+$(function(){
+  $("#start").on("click", function(){
+    console.log(this);
+     if(this.value=="Edinburgh")this.value='';
+  });
+  $("#end").on("click", function(){
+    console.log(this);
+     if(this.value=="Glasgow")this.value='';
+  });
+});

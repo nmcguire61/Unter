@@ -23,7 +23,7 @@
   <br>
   <% if correct_user?(@user) %>
   <% if @user.car != nil  %>
-  <%= link_to "Edit car details", edit_car_path, :class => 'btn smaller' %>
+  <%= link_to "Edit car details", edit_car_path(@user.car), :class => 'btn smaller' %>
   <% else %>
   <%= link_to "Add a car here", new_car_path, :class => 'btn smaller' %>
   <% end %>
