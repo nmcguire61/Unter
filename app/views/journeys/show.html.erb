@@ -22,6 +22,13 @@
             <td><%= @journey.car.seats %></td>
             <td><%= @journey.status %></td>
 
+            <div class="show_buttons">
+              <td><%= link_to 'Edit', edit_journey_path(@journey), :class=> "btn btn-reverse" %></td>
+              <% if current_user.role == 'admin'%>
+              <td><%= link_to 'Destroy', @journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            </div>
+
           </tr>
         </tbody>
       </thead>
