@@ -1,5 +1,11 @@
-<div class="new-journey">
-  <h1>New Journey</h1>
+<h1>New Journey</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @journey %> |
+<%= link_to 'Back', journeys_path %>
+
+<!-- <div class="new-journey">
   <%= form_for(@journey) do |f| %>
   <% if @journey.errors.any? %>
   <div id="error_explanation">
@@ -35,18 +41,18 @@
         <div class="actions">
           <%= f.submit :class => "btn" %>
         </div>
-      </div> <!-- end of map-form-->
+      </div>  end of map-form
       <div class="google-map">
         <div id="floating-panel">
 
-      <!--   <form id="route_start" >
+        <form id="route_start" >
           Start:<input type="text" id="start" onchange="calcRoute();">
           </form>
           <form id="route_end" >
           End: <input type="text" id="end" onchange="calcRoute();">
-        </form> -->
+        </form>
 
-  <!--         <select id="start" onchange="calcRoute();">
+          <select id="start" onchange="calcRoute();">
             <option value="london, gb">London</option>
             <option value="glasgow, uk">Glasgow</option>
             <option value="birmingham, uk">Birmingham</option>
@@ -62,9 +68,9 @@
             <option value="edinburgh, uk">Edinburgh</option>
             <option value="kirkcaldy, uk">Kirkcaldy</option>
             <option value="dundee, uk">Dundee</option>
-          </select> -->
+          </select>
 
-          <!-- <select id="end" onchange="calcRoute();">
+          <select id="end" onchange="calcRoute();">
             <option value="london, gb">London</option>
             <option value="glasgow, uk">Glasgow</option>
             <option value="birmingham, uk">Birmingham</option>
@@ -81,11 +87,11 @@
             <option value="kirkcaldy, uk">Kirkcaldy</option>
             <option value="dundee, uk">Dundee</option>
 
-          </select> -->
+          </select>
 
         </div>
         <div id="map"></div>
-      </div> <!--end of google-map --> 
+      </div> end of google-map
     </div>
     <script>
       function initMap() {
@@ -154,4 +160,4 @@
     <% end %>
 
   </section>
-</div>
+</div> -->
