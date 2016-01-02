@@ -9,6 +9,8 @@ gem 'will_paginate'
 gem 'jquery-turbolinks'
 gem 'rails4-autocomplete'
 gem "jquery-ui-rails"
+gem 'fog'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 
