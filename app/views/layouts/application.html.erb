@@ -19,10 +19,13 @@
       <ul>
         <% if user_signed_in? %>
         <li><%=link_to 'Home', '/', :class => 'btn' %></li>
-        <% if current_user.car.present? %>
-        <li><%=link_to 'Offer a Lift', new_journey_path, :class => 'btn' %></li>
+        <% if user_signed_in? %>
+          <% if current_user.car.present? %>
+            <li><%=link_to 'Offer a Lift', new_journey_path, :class => 'btn' %></li>
+          <% else %>
+            <li><%=link_to 'Offer a Lift', new_car_path(current_user), :class => 'btn' %></li>
         <% else %>
-        <li><%=link_to 'Offer a Lift', new_car_path(current_user), :class => 'btn' %></li>
+          <li><%= link_to 'Please Sign In', '/', :class => 'btn' %></li>
         <% end %>
         <li><%=link_to 'Find a lift', journeys_path,  :class => 'btn' %></li>
        <% if current_user.role == 'admin' %>
