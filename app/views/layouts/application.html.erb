@@ -6,7 +6,6 @@
   <%= javascript_include_tag 'application.js', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="application.css" type="text/css">
 </head>
 <body>
   
@@ -17,25 +16,21 @@
     
     <nav class="nav">
       <ul>
-        <% if user_signed_in? %>
-        <li><%=link_to 'Home', '/', :class => 'btn' %></li>
+        <li><%=link_to 'Home', root_path, :class => 'btn' %></li>
         <% if user_signed_in? %>
           <% if current_user.car.present? %>
             <li><%=link_to 'Offer a Lift', new_journey_path, :class => 'btn' %></li>
           <% else %>
             <li><%=link_to 'Offer a Lift', new_car_path(current_user), :class => 'btn' %></li>
-        <% else %>
-          <li><%= link_to 'Please Sign In', '/', :class => 'btn' %></li>
-        <% end %>
+          <% end %>
         <li><%=link_to 'Find a lift', journeys_path,  :class => 'btn' %></li>
-       <% if current_user.role == 'admin' %>
-        <%= link_to "Transactions", journey_payment_transactions_path(1), :class => 'btn' %>
-        <%= link_to "All Journeys", journey_payment_transactions_path(1), :class => 'btn' %>
-       <% end %>
-      <% else %>  
-        <li><%=link_to 'Home', '/', :class => 'btn' %></li>
-        <li><%=link_to 'Offer a Lift', :class => 'btn' %></li>
-        <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
+        <% if current_user.role == 'admin' %>
+          <%= link_to "Transactions", journey_payment_transactions_path(1), :class => 'btn' %>
+          <%= link_to "All Journeys", journey_payment_transactions_path(1), :class => 'btn' %>
+        <% end %>
+        <% else %>
+          <li><%= link_to 'Please Sign In', new_user_session_path, :class => 'btn' %></li>
+          <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
         <% end %>
 
       </ul>
@@ -78,8 +73,10 @@
   <script type="text/javascript">
       // Taken from http://www.sutanaryan.com/how-to-create-fixed-menu-when-scrolling-page-with-css-and-jquery/
       jQuery("document").ready(function($){
-          var nav_container = $("#fixed_header"),
-                  offset = nav_container.offset().top;
+          var nav_container = $("#fixed_header");
+          if(nav_container.offset()) {
+            var offset = nav_container.offset().top;
+          }
 
           console.log(offset);
 
