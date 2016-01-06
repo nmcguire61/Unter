@@ -23,6 +23,8 @@ body {
   background: rgba(10,10,10,.8);
 }
 
+
+
 /*HOME PAGE*/
 
 
@@ -78,6 +80,12 @@ body {
   margin: auto;
 }
 .home-page h2 {
+  font-weight: 300;
+  font-size: 1.8em;
+  line-height: 1.8em;
+  font-style: italic;
+}
+.new-car h2 {
   font-weight: 300;
   font-size: 1.8em;
   line-height: 1.8em;

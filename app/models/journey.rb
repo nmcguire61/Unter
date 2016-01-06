@@ -5,6 +5,7 @@ class Journey < ActiveRecord::Base
   has_many :passengers
   has_one :payment_transaction
 
+
   acts_as_messageable
 
   scope :open , -> { where(status: "open") }

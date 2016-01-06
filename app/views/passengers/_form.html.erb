@@ -14,9 +14,9 @@
   <div class="field">
     <h2>What is your preferred price?</h2> 
     <% if @journey.driver.price = nil %>
-    <%= "The driver has not yet set a required price for the journey"  %>
+    <%#= "The driver has not yet set a required price for the journey"  %>
     <% else %>
-    <%= "The driver's preferred price is #{@journey.driver.price}" %><br>
+    <%#= "The driver's preferred price is #{@journey.driver.price}" %><br>
     <%= f.text_field :price,  :required => true %>
     <% end %>
   </div>

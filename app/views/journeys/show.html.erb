@@ -62,7 +62,11 @@
     <br>
     <strong>You already joined this journey!</strong>
     <% elsif @journey.driver.user == current_user %>
+
     <strong>You are the driver </strong>
+    <% elsif @journey.status == 'closed' %>
+    <%= "Sorry, the journey is already closed by the driver" %>
+
     <% else %>
     <%= link_to "Join as a passenger", new_journey_passenger_path(@journey), :class=> "btn btn-reverse" %>
     <% end %>
@@ -70,6 +74,8 @@
     <br>
     <br>
     <%= link_to 'Back', journeys_path, :class => "btn" %>
+
+ 
 
 
     <% if @journey.driver.user.id == current_user.id  %>
@@ -104,5 +110,6 @@
     <% end %>
     </div>
 
+  
   </div>
 
