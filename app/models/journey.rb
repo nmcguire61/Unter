@@ -7,7 +7,8 @@ class Journey < ActiveRecord::Base
 
   acts_as_messageable
 
-
+  scope :open , -> { where(status: "open") }
+  scope :closed , -> { where(status: "closed") }
 
   def human_readable_date
     journey_date.strftime('%A %B %d %Y')
@@ -26,7 +27,6 @@ def sum_passenger_price
   #rating_sum = feedback.inject(0) {|sum, feedback| sum + feedback.rating.to_f}
 
 end
-
 
 def mailboxer_email(object)
 
