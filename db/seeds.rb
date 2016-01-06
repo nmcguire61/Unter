@@ -23,17 +23,32 @@ c1 = Car.create!( brand:"VW", seats:"4", user_id:u2.id)
 c2 = Car.create!( brand:"ford", seats:"4", user_id:u6.id)
 c3 = Car.create!( brand: "lamborghini", seats:"1", user_id:u5.id)
 
-j1 = Journey.create!(starting_point:"London", ending_point: "York", starting_time:"2015-12-03 10:13:00" , user_id: u5.id, status:"finished", created_at: "2015-12-01 17:13:49", updated_at: "2015-12-03 17:13:49")
-j2 = Journey.create!(starting_point:"York", ending_point: "Edinburgh", starting_time:"2015-12-08 17:03:00", user_id: u5.id, status:"finished", created_at: "2015-12-07 17:04:14", updated_at: "2015-12-07 22:04:14")
-j3 = Journey.create!(starting_point:"Edinburgh", ending_point: "Dundee", starting_time:"2015-12-12 20:59:00", user_id: u5.id, status:"open")
-j4 = Journey.create!(starting_point:"Cardiff", ending_point: "York", starting_time:"2015-12-11 09:54:00", user_id: u2.id, status:"open")
-j5 = Journey.create!(starting_point:"Edinburgh", ending_point: "London", starting_time:"2015-12-11 16:51:00", user_id: u6.id, status:"open")
+j1 = Journey.create!(starting_point:"London", ending_point: "York", starting_time:"2016-1-03 10:13:00" , user_id: u5.id, status:"finished", created_at: "2015-12-01 17:13:49", updated_at: "2015-12-03 17:13:49")
+j2 = Journey.create!(starting_point:"York", ending_point: "Edinburgh", starting_time:"2016-1-04 17:03:00", user_id: u5.id, status:"finished", created_at: "2015-12-07 17:04:14", updated_at: "2015-12-07 22:04:14")
+j3 = Journey.create!(starting_point:"Edinburgh", ending_point: "Dundee", starting_time:"2016-1-6 20:59:00", user_id: u5.id, status:"finished")
+j4 = Journey.create!(starting_point:"Cardiff", ending_point: "York", starting_time:"2016-1-5 09:54:00", user_id: u2.id, status:"finished")
+j5 = Journey.create!(starting_point:"Edinburgh", ending_point: "London", starting_time:"2016-1-2 16:51:00", user_id: u6.id, status:"finished")
+j6 = Journey.create!(starting_point:"Newcastle", ending_point: "Swansea", starting_time:"2016-1-14 19:00:00", user_id: u2.id, status:"open")
+j7 = Journey.create!(starting_point:"Aberdeen", ending_point: "Inverness", starting_time:"2016-1-11 16:51:00", user_id: u6.id, status:"open")
+j8 = Journey.create!(starting_point:"Edinburgh", ending_point: "Manchester", starting_time:"2016-1-11 16:51:00", user_id: u5.id, status:"open")
+j9 = Journey.create!(starting_point:"York", ending_point: "Durham", starting_time:"2016-1-11 16:51:00", user_id: u5.id, status:"open")
+j10 = Journey.create!(starting_point:"Harrow", ending_point: "Park Royal", starting_time:"2016-1-11 16:51:00", user_id: u2.id, status:"open")
 
 p1 = Passenger.create!(id: 1, user_id: u3.id, journey_id: j1.id, status: "Accepted", price: 20.0, created_at: "2015-12-09 17:08:21", updated_at: "2015-12-09 17:10:44")
 
 p2 = Passenger.create!(id:2, user_id: u3.id, journey_id: j2.id, status: "Accepted", price: 25.0, created_at: "2015-12-07 22:14:30", updated_at: "2015-12-07 22:34:43")
 
-p3 = Passenger.create!(id:3, user_id: u4.id, journey_id: j2.id, status: "Rejected", price: 10.0, created_at: "2015-12-09 21:10:58", updated_at: "2015-12-07 22:32:43")
+p3 = Passenger.create!(id:3, user_id: u3.id, journey_id: j3.id, status: "Accepted", price: 30.0, created_at: "2015-12-09 21:10:58", updated_at: "2015-12-07 22:32:43")
+
+p4 = Passenger.create!(id:4, user_id: u3.id, journey_id: j8.id, status: "Accepted", price: 30.0, created_at: "2015-12-09 21:10:58", updated_at: "2015-12-07 22:32:43")
+
+p5 = Passenger.create!(id:5, user_id: u3.id, journey_id: j9.id, status: "Accepted", price: 25.0, created_at: "2015-12-09 21:10:58", updated_at: "2015-12-07 22:32:43")
+
+p6 = Passenger.create!(id:6, user_id: u4.id, journey_id: j4.id, status: "Accepted", price: 10.0, created_at: "2015-12-09 21:10:58", updated_at: "2015-12-07 22:32:43")
+
+p7 = Passenger.create!(id:7, user_id: u6.id, journey_id: j4.id, status: "Accepted", price: 10.0, created_at: "2015-12-09 21:10:58", updated_at: "2015-12-07 22:32:43")
+
+p8 = Passenger.create!(id:8, user_id: u5.id, journey_id: j4.id, status: "Accepted", price: 10.0, created_at: "2015-12-09 21:10:58", updated_at: "2015-12-07 22:32:43")
 
 d1 = Driver.create!(id:1, user_id:u5.id, journey_id:j1.id, status: nil, price: nil)
 d2 = Driver.create!(id:2, user_id:u5.id, journey_id:j2.id, status: nil, price: nil)
