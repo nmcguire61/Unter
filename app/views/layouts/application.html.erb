@@ -26,7 +26,7 @@
         <li><%=link_to 'Find a lift', journeys_path,  :class => 'btn' %></li>
         <% if current_user.role == 'admin' %>
           <%= link_to "Transactions", journey_payment_transactions_path(1), :class => 'btn' %>
-          <%= link_to "All Journeys", journey_payment_transactions_path(1), :class => 'btn' %>
+         
         <% end %>
         <% else %>
           <li><%= link_to 'Please Sign In', new_user_session_path, :class => 'btn' %></li>
