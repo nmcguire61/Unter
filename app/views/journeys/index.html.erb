@@ -9,7 +9,7 @@
         <th>From</th>
         <th>To</th>
         <th>Travel Date/Time</th>
-        <th>User</th>
+        <th>Driver</th>
         <th>Status</th>
         <th colspan="3"></th>
       </tr>
@@ -27,7 +27,9 @@
 
         <div class="show_buttons">
           <td><%= link_to 'Show', journey, :class=> "btn btn-reverse" %></td>
+          <% if current_user.role == 'admin' || current_user.id == journey.user.id %>
           <td><%= link_to 'Edit', edit_journey_path(journey), :class=> "btn btn-reverse" %></td>
+          <% end %>
           <% if current_user.role == 'admin'%>
           <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>

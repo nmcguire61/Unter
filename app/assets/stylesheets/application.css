@@ -25,13 +25,19 @@ body {
 
 /*HOME PAGE*/
 
+
 .btn {
   text-align: center;
   border-radius: 3px;
   padding: 8px;
 }
 
-.btn:hover, 
+.car_icon:hover {
+  transform: scale(1.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+.search_icon:hover {
+  transform: scale(1.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
 .btn-reverse {
   color: white;
   background-color: #ff3660; 
