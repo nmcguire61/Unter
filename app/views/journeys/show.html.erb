@@ -12,6 +12,8 @@
             <th>Car:</strong></th>
             <th>Number of seats:</th>
             <th>Status:</th>
+            <th></th>
+            <th></th>
           </tr>
           <tr>
             <td><%= @journey.starting_point %></td>
@@ -100,7 +102,7 @@
     <%= link_to "Please leave a feedback about #{p.user.name}", new_feedback_index_path("passenger", p.id), :class => "btn" %>
     <% end %>
     <% end %>
-
+    </div>
 
   </div>
 

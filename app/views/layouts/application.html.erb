@@ -24,15 +24,13 @@
             <li><%=link_to 'Offer a Lift', new_car_path(current_user), :class => 'btn' %></li>
           <% end %>
         <li><%=link_to 'Find a lift', journeys_path,  :class => 'btn' %></li>
-
-       <% if current_user.role == 'admin' %>
-        <%= link_to "Transactions", journey_payment_transactions_path(1), :class => 'btn' %>
-        <%= link_to "All Journeys", journeys_path, :class => 'btn' %>
-       <% end %>
-      <% else %>  
-        <li><%=link_to 'Home', '/', :class => 'btn' %></li>
-        <li><%=link_to 'Offer a Lift', :class => 'btn' %></li>
-        <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
+        <% if current_user.role == 'admin' %>
+          <%= link_to "Transactions", journey_payment_transactions_path(1), :class => 'btn' %>
+         
+        <% end %>
+        <% else %>
+          <li><%= link_to 'Please Sign In', new_user_session_path, :class => 'btn' %></li>
+          <li><%=link_to 'Find a lift', new_journey_path,  :class => 'btn' %></li>
 
         <% end %>
 
