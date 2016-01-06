@@ -1,3 +1,5 @@
+<div class="journeys">
+<h1>New Transactions</h1>
 <%= form_for([@journey, @payment_transaction]) do |f| %>
   <% if @payment_transaction.errors.any? %>
     <div id="error_explanation">
@@ -14,11 +16,12 @@
 
   <div class="field">
     <%= @payment_transaction.journey_cost %><br>
-    <%= "Please confirm that the following journey is ready to be monetized: "%> <br>
-    <%= "#{@payment_transaction.journey.starting_point} - #{@payment_transaction.journey.ending_point}, #{@payment_transaction.journey.starting_time}" %>
+    <a><%= "Please confirm that the following journey is ready to be monetized: "%> <br>
+    <%= "#{@payment_transaction.journey.starting_point} - #{@payment_transaction.journey.ending_point}, #{@payment_transaction.journey.human_readable_time}" %></a>
   </div>
 
   <div class="actions">
     <%= f.submit "Confirm", :class => "btn" %>
   </div>
 <% end %>
+</div>

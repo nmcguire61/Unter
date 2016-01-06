@@ -1,14 +1,15 @@
+<div class="journeys">
+  <p>
+    <strong>Brand:</strong>
+    <%= @car.brand %>
+  </p>
 
+  <p>
+    <strong>Seats:</strong>
+    <%= @car.seats %>
+  </p>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @car.brand %>
-</p>
-
-<p>
-  <strong>Seats:</strong>
-  <%= @car.seats %>
-</p>
-
-
-<%= link_to 'Back', @car.user %>
+  <div class="back_btn">
+    <%= link_to 'Back', @car.user %>
+  </div>
+</div>

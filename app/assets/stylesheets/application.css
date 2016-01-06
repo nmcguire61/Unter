@@ -491,4 +491,26 @@ color:  #ff3660;
 .show-trip {
   margin: 50px;
 }
-    
+  
+/*NEW TRANSACTION PAGE*/
+
+.field a{
+  font-weight: 300;
+  font-size: 25px;
+} 
+
+.actions btn {
+  margin-top: 40px;
+}
+.field {
+  margin-bottom: 40px;
+}
+
+.car_image {
+  width: 40%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+
