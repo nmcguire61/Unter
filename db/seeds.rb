@@ -20,15 +20,14 @@ u5 = User.create!( name: "Harold", email: "harollingthunder@internets.example", 
 u6 = User.create!( name: "Margret", email: "magstheminx@internets.example", password: "password", role: "user", description: "Just call me mustang mags!")
 
 c1 = Car.create!( brand:"VW", seats:"4", user_id:u2.id)
-c2 = Car.create!( brand:"ford", seats:"4",
-  user_id:u6.id)
+c2 = Car.create!( brand:"ford", seats:"4", user_id:u6.id)
 c3 = Car.create!( brand: "lamborghini", seats:"1", user_id:u5.id)
 
-j5 = Journey.create!(starting_point:"Edinburgh", ending_point: "London", starting_time:"2015-12-11 16:51:00", user_id: u6.id, status:"open")
-j4 = Journey.create!(starting_point:"Cardiff", ending_point: "York", starting_time:"2015-12-11 09:54:00", user_id: u2.id, status:"open")
-j3 = Journey.create!(starting_point:"Edinburgh", ending_point: "Dundee", starting_time:"2015-12-12 20:59:00", user_id: u5.id, status:"open")
-j2 = Journey.create!(starting_point:"York", ending_point: "Edinburgh", starting_time:"2015-12-08 17:03:00", user_id: u5.id, status:"finished", created_at: "2015-12-07 17:04:14", updated_at: "2015-12-07 22:04:14")
 j1 = Journey.create!(starting_point:"London", ending_point: "York", starting_time:"2015-12-03 10:13:00" , user_id: u5.id, status:"finished", created_at: "2015-12-01 17:13:49", updated_at: "2015-12-03 17:13:49")
+j2 = Journey.create!(starting_point:"York", ending_point: "Edinburgh", starting_time:"2015-12-08 17:03:00", user_id: u5.id, status:"finished", created_at: "2015-12-07 17:04:14", updated_at: "2015-12-07 22:04:14")
+j3 = Journey.create!(starting_point:"Edinburgh", ending_point: "Dundee", starting_time:"2015-12-12 20:59:00", user_id: u5.id, status:"open")
+j4 = Journey.create!(starting_point:"Cardiff", ending_point: "York", starting_time:"2015-12-11 09:54:00", user_id: u2.id, status:"open")
+j5 = Journey.create!(starting_point:"Edinburgh", ending_point: "London", starting_time:"2015-12-11 16:51:00", user_id: u6.id, status:"open")
 
 p1 = Passenger.create!(id: 1, user_id: u3.id, journey_id: j1.id, status: "Accepted", price: 20.0, created_at: "2015-12-09 17:08:21", updated_at: "2015-12-09 17:10:44")
 
